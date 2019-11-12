@@ -16,10 +16,10 @@ Para el desarrollo de la práctica se ha utilizado el lenguaje Ruby y algunas de
 - Bundler, para el mantenimiento automático de las dependencias del código.
 - RSpec, para facilitar la interpretación de los ficheros
 
-Las clases implementadas son la clase *Alimento* que contiene los principales atributos de cada alimento como su nombre, las proteínas, carbohidratos y lípidos por cada kilo del alimento.
+Las clases implementadas son la clase *Alimento* que contiene los principales atributos de cada alimento como su nombre, las proteínas, carbohidratos y lípidos por cada kilo del alimento.  
 La otra clase utilizada es la clase *Persona* que calcula el impacto ambiental diario de una persona, haciendo distinción si es hombre o mujer.
 
 # Otros datos
-Paula Elena Expósito Estévez
-Universidad de La Laguna
+Paula Elena Expósito Estévez  
+Universidad de La Laguna  
 Curso 2019/2020
