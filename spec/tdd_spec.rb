@@ -50,5 +50,15 @@ RSpec.describe TDD do
 			expect(2.3).to eq(@a4.gei)
 			expect(6).to eq(@a5.gei)
 		end
+
+		it "Se pueden sumar dos o más alimentos" do
+			a_suma = @a4 + @a5
+			expect(25.2).to eq(a_suma.proteinas)
+			expect(47).to eq(a_suma.carbohidratos)
+			expect(43.6).to eq(a_suma.lipidos)
+			expect(8.3).to eq(a_suma.gei)
+			expect(7.1).to eq(a_suma.terreno)
+		end
+
 	end
 end
