@@ -39,4 +39,8 @@ class Alimento
 	def to_s
 		"#{@cantidad} kg de #{@nombre}: #{@proteinas}, #{@carbohidratos}, #{@lipidos}, #{@gei}, #{@terreno}"
 	end
+
+	def valor_energetico
+		(proteinas*4.0 + carbohidratos*4.0 + lipidos*9.0).round(2)
+	end
 end 
