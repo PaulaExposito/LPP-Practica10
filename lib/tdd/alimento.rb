@@ -2,5 +2,7 @@
 #
 
 class Alimento
-
-end
+	def to_s
+		"{hola mundo}"
+	end
+end 
