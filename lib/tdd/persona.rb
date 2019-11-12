@@ -12,28 +12,36 @@ class Persona
 
 
 	def impacto_ambiental_diario (dieta)
+		impacto_terreno = 0.0
+		impacto_gei = 0.0
 		impacto = 0.0
 		proteinas = 0.0
+
 		dieta.each do |i|
-			impacto += i.valor_energetico
+			impacto_gei += i.gei
+			impacto_terreno += i.terreno
+			impacto +=0.0
+			proteinas += 0.0
 		end
 
+		impacto_gei.round(2)
+		impacto_terreno.round(2)
 		impacto.round(2)
 		proteinas.round(2)
+		impactos_ambientales = [impacto_gei, impacto_terreno]
 
 		if sexo == "hombre"
-			if impacto <= 3000 && proteinas <= 54
-				return impacto
+			if impacto <= 3000 && proteinas < 55
+				return impactos_ambientales
 			else
 				return false
 			end
 		else
-			if impacto <= 2300 && proteinas <= 41
-				return impacto
+			if impacto <= 2300 && proteinas < 42
+				return impactos_ambientales
 			else
 				return false
 			end
 		end
-
 	end
 end
