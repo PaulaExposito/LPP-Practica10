@@ -27,6 +27,14 @@ class Alimento
 		@cantidad = cantidad
 	end
 
+	def +(other)
+		return nil unless other.instance_of? Alimento
+		nuevo_alimento = [(proteinas+other.proteinas).round(2), (carbohidratos+other.carbohidratos).round(2), (lipidos+other.lipidos).round(2), (gei+other.gei).round(2), (terreno+other.terreno).round(2)]
+		nuevo_nombre = nombre + other.nombre
+		nueva_cantidad = 1
+		Alimento.new(nuevo_alimento, nuevo_nombre, nueva_cantidad)
+	end
+
 	def to_s
 		"{hola mundo}"
 	end

@@ -58,6 +58,14 @@ RSpec.describe TDD do
 			expect(43.6).to eq(a_suma.lipidos)
 			expect(8.3).to eq(a_suma.gei)
 			expect(7.1).to eq(a_suma.terreno)
+
+
+			b_suma = @a3 + @a4 + @a5
+			expect(42.8).to eq(b_suma.proteinas)
+			expect(48.5).to eq(b_suma.carbohidratos)
+			expect(44.2).to eq(b_suma.lipidos)
+			expect(26.3).to eq(b_suma.gei)
+			expect(9.1).to eq(b_suma.terreno)
 		end
 
 	end
