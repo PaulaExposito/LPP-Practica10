@@ -70,7 +70,8 @@ RSpec.describe TDD do
 
 		it "Se puede obtener el alimento formateado (método to_s)" do
 			expect("1 kg de camarones: 17.6, 1.5, 0.6, 18.0, 2.0").to eq(@a3.to_s)
-			expect("0.5 kg de salmon: 9.95, 0.0, 6.8, 3.0, 1.85").tp_eq(@a5.to_s)
+			@a5 = Alimento.new(Salmon, "salmon", 0.5)
+			expect("0.5 kg de salmon: 9.95, 0.0, 6.8, 3.0, 1.85").to eq(@a5.to_s)
 		end	
 
 	end

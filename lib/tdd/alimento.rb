@@ -35,7 +35,8 @@ class Alimento
 		Alimento.new(nuevo_alimento, nuevo_nombre, nueva_cantidad)
 	end
 
-#	def to_s
-#		"{hola mundo}"
-#	end
+	# Invalidando el método to_s de la clase Object
+	def to_s
+		"#{@cantidad} kg de #{@nombre}: #{@proteinas}, #{@carbohidratos}, #{@lipidos}, #{@gei}, #{@terreno}"
+	end
 end 
