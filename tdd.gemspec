@@ -5,7 +5,7 @@ require "tdd/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "tdd"
-  spec.version       = Tdd::VERSION
+  spec.version       = TDD::VERSION
   spec.authors       = ["Paula Exposito"]
   spec.email         = ["alu0101106335@ull.edu.es"]
 

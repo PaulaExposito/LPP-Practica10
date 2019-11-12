@@ -1,9 +1,12 @@
-RSpec.describe Tdd do
-  it "has a version number" do
-    expect(Tdd::VERSION).not_to be nil
-  end
+require 'spec_helper'
+require './lib/tdd/alimento.rb'
+require './lib/tdd/persona.rb'
 
-  it "does something useful" do
-    expect(true).to eq(true)
-  end
+describe TDD do
+	context "# Creando clase Alimento" do
+		it "Se crea un alimento correctamente" do
+			queso = Alimento::Alimento.new(25.0)
+			expect(queso.nombre).to eq("queso")
+		end
+	end
 end
