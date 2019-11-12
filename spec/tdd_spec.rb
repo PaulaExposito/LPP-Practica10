@@ -72,6 +72,14 @@ RSpec.describe TDD do
 			expect("1 kg de camarones: 17.6, 1.5, 0.6, 18.0, 2.0").to eq(@a3.to_s)
 			@a5 = Alimento.new(Salmon, "salmon", 0.5)
 			expect("0.5 kg de salmon: 9.95, 0.0, 6.8, 3.0, 1.85").to eq(@a5.to_s)
+		end
+
+		it "Calcular el aporte energético del alimento" do
+			expect(112.3).to eq(@a1.valor_energetico)
+			expect(225).to eq(@a2.valor_energetico)
+			expect(81.8).to eq(@a3.valor_energetico)
+			expect(479.2).to eq(@a4.valor_energetico)
+			expect(202).to eq(@a5.valor_energetico)
 		end	
 
 	end
