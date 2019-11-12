@@ -9,4 +9,31 @@ class Persona
 		@nombre = nombre
 		@sexo = sexo
 	end
+
+
+	def impacto_ambiental_diario (dieta)
+		impacto = 0.0
+		proteinas = 0.0
+		dieta.each do |i|
+			impacto += i.valor_energetico
+		end
+
+		impacto.round(2)
+		proteinas.round(2)
+
+		if sexo == "hombre"
+			if impacto <= 3000 && proteinas <= 54
+				return impacto
+			else
+				return false
+			end
+		else
+			if impacto <= 2300 && proteinas <= 41
+				return impacto
+			else
+				return false
+			end
+		end
+
+	end
 end

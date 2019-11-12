@@ -85,7 +85,12 @@ RSpec.describe TDD do
 
 	context "# Creando la clase Persona" do
 		before :each do
-			@dieta1 = [Carne_cordero, Chocolate, Lentejas, Leche, Tofu]
+			@a1 = Alimento.new(Carne_cordero, "carne de cordero", 1)
+			@a2 = Alimento.new(Chocolate, "chocolate", 1)
+			@a3 = Alimento.new(Lentejas, "lentejas", 1)
+			@a4 = Alimento.new(Leche, "leche", 1)
+			@a5 = Alimento.new(Tofu, "tofu", 1)
+			@dieta1 = [@a1, @a2, @a3, @a4, @a5]
 		end	
 
 		it "Se crea un objeto persona y sus getters funcionan correctamente" do
@@ -99,7 +104,9 @@ RSpec.describe TDD do
 		end
 
 		it "Se calcula correctamente el impacto ambiental de un hombre" do
-			expect(2980.6).to eq(impacto_ambiental_diario(@dieta1))
+			maria = Persona.new("Maria", "mujer")
+			antonio = Persona.new("Antonio", "hombre")
+			expect(2980.6).to eq(antonio.impacto_ambiental_diario(@dieta1))
 		end
 	end
 end
