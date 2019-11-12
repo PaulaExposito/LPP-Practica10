@@ -10,7 +10,9 @@ Carne_cordero = [18.0, 0.0, 17.0, 20.0, 185.0]
 Camarones = [17.6, 1.5, 0.6, 18.0, 2.0]
 Chocolate = [5.3, 47.0, 30.0, 2.3, 3.4]
 Salmon = [19.9, 0.0, 13.6, 6.0, 3.7]
-
+Lentejas = [23.5, 52.0, 1.4, 0.4, 3.4]
+Leche = [3.3, 4.8, 3.2, 3.2, 8.9]
+Tofu = [3.9, 100, 165, 2.0, 2.2]   # Valores diferentes a la tabla
 
 # Clase Alimento
 
