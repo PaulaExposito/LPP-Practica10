@@ -19,11 +19,11 @@ class Alimento
 
 	def initialize (alimento, nombre, cantidad)
 		@nombre = nombre
-		@proteinas = alimento[0] * cantidad
-		@carbohidratos = alimento[1] * cantidad
-		@lipidos = alimento[2] * cantidad
-		@gei = alimento[3] * cantidad
-		@terreno = alimento[4] * cantidad
+		@proteinas = (alimento[0] * cantidad).round(2)
+		@carbohidratos = (alimento[1] * cantidad).round(2)
+		@lipidos = (alimento[2] * cantidad).round(2)
+		@gei = (alimento[3] * cantidad).round(2)
+		@terreno = (alimento[4] * cantidad).round(2)
 		@cantidad = cantidad
 	end
 
@@ -35,7 +35,7 @@ class Alimento
 		Alimento.new(nuevo_alimento, nuevo_nombre, nueva_cantidad)
 	end
 
-	def to_s
-		"{hola mundo}"
-	end
+#	def to_s
+#		"{hola mundo}"
+#	end
 end 
