@@ -22,5 +22,12 @@ RSpec.describe TDD do
 			expect(false).to eq(@a2.nombre.nil?)
 			expect(false).to eq(@a3.nombre.nil?)
 		end
+
+		it "Existen los nutrientes de un alimento y tienen valores correctos" do
+			expect(false).to eq(@a1.proteinas.nil? && @a1.carbohidratos.nil? && @a1.lipidos.nil?)
+			expect(21.1).to eq(@a1.proteinas)
+			expect(0.0).to eq(@a1.carbohidratos)
+			expect(3.1).to eq(@a1.lipidos)
+		end
 	end
 end
