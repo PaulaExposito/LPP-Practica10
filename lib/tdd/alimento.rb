@@ -15,15 +15,15 @@ Salmon = [19.9, 0.0, 13.6, 6.0, 3.7]
 # Clase Alimento
 
 class Alimento
-	attr_reader :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno, :cantidad
+	attr_reader :nombre, :proteinas, :carbohidratos, :lipidos#, :gei, :terreno, :cantidad
 
 	def initialize (alimento, nombre, cantidad)
 		@nombre = nombre
-		@proteinas = alimento[0]
-		@carbohidratos = alimento[1]
-		@lipidos = alimento[2]
-		@gei = alimento[3]
-		@terreno = alimento[4]
+		@proteinas = alimento[0] * cantidad
+		@carbohidratos = alimento[1] * cantidad
+		@lipidos = alimento[2] * cantidad
+		@gei = alimento[3] * cantidad
+		@terreno = alimento[4] * cantidad
 		@cantidad = cantidad
 	end
 

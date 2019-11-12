@@ -29,5 +29,13 @@ RSpec.describe TDD do
 			expect(0.0).to eq(@a1.carbohidratos)
 			expect(3.1).to eq(@a1.lipidos)
 		end
+
+
+		it "Existen los gases de efecto invernadero y el terreno m2 año y tienen valores correctos" do
+			@a1 = Alimento.new(Carne_vaca, "carne de vaca", 0.5)
+			expect(false).to eq(@a1.gei.nil? && @a1.terreno.nil?)
+			expect(25).to eq(@a1.gei)
+			expect(82).to eq(@a1.terreno)
+		end
 	end
 end
