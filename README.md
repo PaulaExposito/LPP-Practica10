@@ -1,35 +1,25 @@
-# Tdd
+## Lenguajes y Paradigmas de Programación
+### Práctica 6: Desarrollo Dirigido por Pruebas (TDD)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tdd`. To experiment with that code, run `bin/console` for an interactive prompt.
+Esta práctica consiste en desarrollar una aplicación que calcule el impacto ambiental que generan las dietas diarias de personas que tienen entre 20 y 39 años.
 
-TODO: Delete this and the text above, and describe your gem
+# Objetivos
 
-## Installation
+1. Aprender a utilizar la metolodología para el desarrollo de software *TDD*. Que consiste en escribir primero la prueba que queremos verificar y después implementar el código que cumplimenta la prueba.
 
-Add this line to your application's Gemfile:
+2. Aprender un nuevo tipo de paradigma de programación, el *Orientado a Objetos*.
 
-```ruby
-gem 'tdd'
-```
+# Clases
 
-And then execute:
+Para el desarrollo de la práctica se ha utilizado el lenguaje Ruby y algunas de sus gemas como:
 
-    $ bundle
+- Bundler, para el mantenimiento automático de las dependencias del código.
+- RSpec, para facilitar la interpretación de los ficheros
 
-Or install it yourself as:
+Las clases implementadas son la clase *Alimento* que contiene los principales atributos de cada alimento como su nombre, las proteínas, carbohidratos y lípidos por cada kilo del alimento.
+La otra clase utilizada es la clase *Persona* que calcula el impacto ambiental diario de una persona, haciendo distinción si es hombre o mujer.
 
-    $ gem install tdd
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tdd.
+# Otros datos
+Paula Elena Expósito Estévez
+Universidad de La Laguna
+Curso 2019/2020
