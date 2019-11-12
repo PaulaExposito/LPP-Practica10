@@ -37,5 +37,18 @@ RSpec.describe TDD do
 			expect(25).to eq(@a1.gei)
 			expect(82).to eq(@a1.terreno)
 		end
+
+		it "Existe un método para obtener el terreno utilizado" do
+			expect(185).to eq(@a2.terreno)
+			expect(3.4).to eq(@a4.terreno)
+			expect(3.7).to eq(@a5.terreno)
+		end
+
+
+		it "Existe un método para obtener los gases de efecto invernadero" do
+			expect(20).to eq(@a2.terreno)
+			expect(2.3).to eq(@a4.terreno)
+			expect(6).to eq(@a5.terreno)
+		end
 	end
 end
