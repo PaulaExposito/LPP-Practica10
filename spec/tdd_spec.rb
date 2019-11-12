@@ -46,9 +46,9 @@ RSpec.describe TDD do
 
 
 		it "Existe un método para obtener los gases de efecto invernadero" do
-			expect(20).to eq(@a2.terreno)
-			expect(2.3).to eq(@a4.terreno)
-			expect(6).to eq(@a5.terreno)
+			expect(20).to eq(@a2.gei)
+			expect(2.3).to eq(@a4.gei)
+			expect(6).to eq(@a5.gei)
 		end
 	end
 end
