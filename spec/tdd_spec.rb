@@ -96,6 +96,9 @@ RSpec.describe TDD do
 			@a7 = Alimento.new(Pollo, "pollo", 1)
 			@a8 = Alimento.new(Huevos, "huevos", 1)
 			@dieta2 = [@a6, @a7, @a8]
+
+			@hombre = Persona.new("Antonio", "hombre")
+			@mujer = Persona.new("María", "mujer")
 		end	
 
 		it "Se crea un objeto persona y sus getters funcionan correctamente" do
@@ -108,16 +111,20 @@ RSpec.describe TDD do
 			expect("hombre").to eq(antonio.sexo)
 		end
 
-#		it "Se calcula correctamente el impacto ambiental de un hombre" do
-#			antonio = Persona.new("Antonio", "hombre")
-#			expect(27.9).to eq(antonio.impacto_ambiental_diario(@dieta1)[0])  # impacto de los gases del efecto invernadero
-#			expect(202.9).to eq(antonio.impacto_ambiental_diario(@dieta1)[1])  # impacto del terreno
-#		end
+		it "Se calcula correctamente el impacto ambiental de un hombre" do
+			expect(27.9).to eq(@hombre.impacto_ambiental_diario(@dieta1)[0])  # impacto de los GEI
+			expect(202.9).to eq(@hombre.impacto_ambiental_diario(@dieta1)[1])  # impacto del terreno
+
+			expect(27.9).to eq(@hombre.impacto_ambiental_diario(@dieta2)[0])
+			expect(14.8).to eq(@hombre.impacto_ambiental_diario(@dieta2)[1])
+		end
 
 		it "Se calcula correctamente el impacto ambiental de una mujer" do
-			maria = Persona.new("Maria", "mujer")
-			expect(27.9).to eq(maria.impacto_ambiental_diario(@dieta2)[0])
-			expect(14.8).to eq(maria.impacto_ambiental_diario(@dieta2)[1])
+			expect(27.9).to eq(@mujer.impacto_ambiental_diario(@dieta2)[0])
+			expect(14.8).to eq(@mujer.impacto_ambiental_diario(@dieta2)[1])
+
+			expect(false).to eq(@mujer.impacto_ambiental_diario(@dieta1)[0])
+			expect(false).to eq(@mujer.impacto_ambiental_diario(@dieta1)[1])
 		end
 	end
 end

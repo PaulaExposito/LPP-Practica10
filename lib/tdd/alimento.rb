@@ -19,7 +19,7 @@ Huevos = [3.0, 300.0, 90.0, 4.2, 5.7]    # Valores cambiados
 # Clase Alimento
 
 class Alimento
-	attr_reader :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno, :cantidad
+	attr_accessor :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno, :cantidad
 
 	def initialize (alimento, nombre, cantidad)
 		@nombre = nombre

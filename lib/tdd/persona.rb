@@ -3,7 +3,7 @@
 #
 
 class Persona
-	attr_reader :nombre, :sexo
+	attr_accessor :nombre, :sexo
 
 	def initialize (nombre, sexo)
 		@nombre = nombre
@@ -20,8 +20,8 @@ class Persona
 		dieta.each do |i|
 			impacto_gei += i.gei
 			impacto_terreno += i.terreno
-			impacto +=0.0
-			proteinas += 0.0
+			impacto += i.valor_energetico
+			proteinas += i.proteinas
 		end
 
 		impacto_gei.round(2)
@@ -34,13 +34,13 @@ class Persona
 			if impacto <= 3000 && proteinas < 55
 				return impactos_ambientales
 			else
-				return false
+				return f = ([false, false])
 			end
 		else
 			if impacto <= 2300 && proteinas < 42
 				return impactos_ambientales
 			else
-				return false
+				return (f = [false, false])
 			end
 		end
 	end
