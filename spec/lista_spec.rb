@@ -9,9 +9,10 @@ RSpec.describe List do
 		#Nodos
 		@n = Node.new(7, nil, nil)
 		@m = Node.new(8, nil, nil)
+		@o = Node.new(3, nil, nil)
 
 		#Lista
-		#@l = List.new(@n)
+		@l = List.new(@n)
 	end
 
 	context "# ESTRUCTURA DE NODO " do
@@ -43,6 +44,15 @@ RSpec.describe List do
 			expect(@n).to eq(l.head)
 			expect(@n).to eq(l.tail)
 		end
+
+		it "Insertamos elementos en la lista" do
+			@l.insert(@m)
+			expect(2).to eq(l.tam)
+
+			@l.insert(@o)
+			expect(3).to eq(l.tam)
+		end
+
 	end
 end
 
