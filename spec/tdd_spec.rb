@@ -1,4 +1,5 @@
 require 'spec_helper'
+require './lib/tdd/version.rb'
 require './lib/tdd/alimento.rb'
 require './lib/tdd/persona.rb'
 
@@ -6,14 +7,14 @@ require './lib/tdd/persona.rb'
 RSpec.describe TDD do
 	context "# Creando clase Alimento" do
 		before :each do
-			@a1 = Alimento.new(Carne_vaca, "carne de vaca", 1)
-			@a2 = Alimento.new(Carne_cordero, "carne de cordero", 1)
-			@a3 = Alimento.new(Camarones, "camarones", 1)
-			@a4 = Alimento.new(Chocolate, "chocolate", 1)
-			@a5 = Alimento.new(Salmon, "salmon", 1)
+			@a1 = Alimento.new(TDD::Carne_vaca, "carne de vaca", 1)
+			@a2 = Alimento.new(TDD::Carne_cordero, "carne de cordero", 1)
+			@a3 = Alimento.new(TDD::Camarones, "camarones", 1)
+			@a4 = Alimento.new(TDD::Chocolate, "chocolate", 1)
+			@a5 = Alimento.new(TDD::Salmon, "salmon", 1)
 		end
 		it "Se crea un alimento correctamente" do
-			c1 = Alimento.new(Camarones, "camarones", 1)
+			c1 = Alimento.new(TDD::Camarones, "camarones", 1)
 			expect(c1.nombre).to eq("camarones")
 		end
 
@@ -32,7 +33,7 @@ RSpec.describe TDD do
 
 
 		it "Existen los gases de efecto invernadero y el terreno m2 año y tienen valores correctos" do
-			@a1 = Alimento.new(Carne_vaca, "carne de vaca", 0.5)
+			@a1 = Alimento.new(TDD::Carne_vaca, "carne de vaca", 0.5)
 			expect(false).to eq(@a1.gei.nil? && @a1.terreno.nil?)
 			expect(25).to eq(@a1.gei)
 			expect(82).to eq(@a1.terreno)
@@ -70,7 +71,7 @@ RSpec.describe TDD do
 
 		it "Se puede obtener el alimento formateado (método to_s)" do
 			expect("1 kg de camarones: 17.6, 1.5, 0.6, 18.0, 2.0").to eq(@a3.to_s)
-			@a5 = Alimento.new(Salmon, "salmon", 0.5)
+			@a5 = Alimento.new(TDD::Salmon, "salmon", 0.5)
 			expect("0.5 kg de salmon: 9.95, 0.0, 6.8, 3.0, 1.85").to eq(@a5.to_s)
 		end
 
@@ -85,16 +86,16 @@ RSpec.describe TDD do
 
 	context "# Creando la clase Persona" do
 		before :each do
-			@a1 = Alimento.new(Carne_cordero, "carne de cordero", 1)
-			@a2 = Alimento.new(Chocolate, "chocolate", 1)
-			@a3 = Alimento.new(Lentejas, "lentejas", 1)
-			@a4 = Alimento.new(Leche, "leche", 1)
-			@a5 = Alimento.new(Tofu, "tofu", 1)
+			@a1 = Alimento.new(TDD::Carne_cordero, "carne de cordero", 1)
+			@a2 = Alimento.new(TDD::Chocolate, "chocolate", 1)
+			@a3 = Alimento.new(TDD::Lentejas, "lentejas", 1)
+			@a4 = Alimento.new(TDD::Leche, "leche", 1)
+			@a5 = Alimento.new(TDD::Tofu, "tofu", 1)
 			@dieta1 = [@a1, @a2, @a3, @a4, @a5]
 
-			@a6 = Alimento.new(Camarones, "camarones", 1)
-			@a7 = Alimento.new(Pollo, "pollo", 1)
-			@a8 = Alimento.new(Huevos, "huevos", 1)
+			@a6 = Alimento.new(TDD::Camarones, "camarones", 1)
+			@a7 = Alimento.new(TDD::Pollo, "pollo", 1)
+			@a8 = Alimento.new(TDD::Huevos, "huevos", 1)
 			@dieta2 = [@a6, @a7, @a8]
 
 			@hombre = Persona.new("Antonio", "hombre")
@@ -123,8 +124,8 @@ RSpec.describe TDD do
 			expect(27.9).to eq(@mujer.impacto_ambiental_diario(@dieta2)[0])
 			expect(14.8).to eq(@mujer.impacto_ambiental_diario(@dieta2)[1])
 
-			expect(false).to eq(@mujer.impacto_ambiental_diario(@dieta1)[0])
-			expect(false).to eq(@mujer.impacto_ambiental_diario(@dieta1)[1])
+			expect(27.9).to eq(@mujer.impacto_ambiental_diario(@dieta1)[0])
+			expect(202.9).to eq(@mujer.impacto_ambiental_diario(@dieta1)[1])
 		end
 	end
 end
