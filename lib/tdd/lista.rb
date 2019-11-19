@@ -46,9 +46,20 @@ class List
 			@head.next = nil
 			aux.prev = nil
 		end
-		puts "[DEBUG EXTRACT HEAD]: tam = #{@tam} \n"
+		
 		@tam = @tam - 1
-		puts "[DEBUG EXTRACT HEAD]: tam = #{@tam} \n"
+		return aux
+	end
+
+	def extract_tail
+		if tam > 0
+			aux = @tail
+			@tail = @tail.next
+			@tail.prev = nil
+			aux.next = nil
+		end
+
+		@tam -= 1
 		return aux
 	end
 end
