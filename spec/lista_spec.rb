@@ -41,7 +41,8 @@ RSpec.describe List do
 			l = List.new(@n)
 			expect(true).to eq(l.is_a?List)
 			expect(@n).to eq(l.head)
-			expect(@m).to eq(l.tail)
+			expect(@n).to eq(l.tail)
 		end
 	end
 end
+
