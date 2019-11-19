@@ -20,13 +20,22 @@ class List
 		if tam == 0
 			@head = @tail = node
 		else
-			puts "nodo ~> v:#{@head.value}, prev:#{@head.prev}, next:#{@head.next}\n"
-			puts "nodo ~> v:#{node.value}, prev:#{node.prev}, next:#{node.next}\n"
 			@head.next = node
 			node.prev = @head
 			@head = node
 		end
 
+		@tam += 1
+	end
+
+	def insert_tail (node)
+		if tam == 0
+			@head = @tail = node
+		else
+			@tail.prev = node
+			node.next = @tail
+			@tail = node
+		end
 		@tam += 1
 	end
 end
