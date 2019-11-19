@@ -88,7 +88,7 @@ RSpec.describe List do
 		end
 
 		it "Mostrando la lista" do
-			expect("(7, 8, 3").to eq(@v.to_s)
+			expect("(7, 8, 3)").to eq(@v.to_s)
 		end
 
 	end

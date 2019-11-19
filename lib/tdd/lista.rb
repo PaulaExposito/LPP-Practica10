@@ -62,4 +62,14 @@ class List
 		@tam -= 1
 		return aux
 	end
+
+	def to_s
+		aux = @tail
+		c = "("
+		while aux.next != nil do
+			c = c + aux.value.to_s + ", "
+			aux = aux.next
+		end
+		c = c + aux.value.to_s + ")"
+	end
 end
