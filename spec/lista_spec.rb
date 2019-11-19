@@ -6,7 +6,12 @@ require './lib/tdd/lista.rb'
 RSpec.describe List do
 
 	before :all do
-		#declarar cosillas
+		#Nodos
+		@n = Node.new(7, nil, nil)
+		@m = Node.new(8, nil, nil)
+
+		#Lista
+		#@l = List.new(@n)
 	end
 
 	context "# ESTRUCTURA DE NODO " do
@@ -16,25 +21,27 @@ RSpec.describe List do
 		end
 
 		it "Se puede acceder a los miembros de Node" do
-			n = Node.new(7, nil, nil)
-			expect(7).to eq(n.value)
-			expect(nil).to eq(n.prev)
-			expect(nil).to eq(n.next)
+			expect(7).to eq(@n.value)
+			expect(nil).to eq(@n.prev)
+			expect(nil).to eq(@n.next)
 		end
 
 		it "Se pueden encadenar dos nodos" do
-			n = Node.new(7, nil, nil)
-			m = Node.new(8, nil, nil)
-			n.next = m
-			m.prev = n
-			expect(m).to eq(n.next)
-			expect(nil).to eq(n.prev)
-			expect(n).to eq(m.prev)
-			expect(nil).to eq(m.next)
+			@n.next = @m
+			@m.prev = @n
+			expect(@m).to eq(@n.next)
+			expect(nil).to eq(@n.prev)
+			expect(@n).to eq(@m.prev)
+			expect(nil).to eq(@m.next)
 		end
 	end
 
 	context "# CLASE LISTA " do
-		
+		it "Se crea una lista con cabeza y cola" do
+			l = List.new(@n)
+			expect(true).to eq(l.is_a?List)
+			expect(@n).to eq(l.head)
+			expect(@m).to eq(l.tail)
+		end
 	end
 end
