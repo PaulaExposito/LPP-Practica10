@@ -29,5 +29,6 @@ RSpec.describe List do
 			expect(m).to eq(n.next)
 		end
 
+
 	end
 end
