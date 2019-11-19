@@ -13,6 +13,9 @@ RSpec.describe List do
 
 		#Lista
 		@l = List.new(@n)
+		@v = List.new(@n)
+		@v.insert_head(@m)
+		@v.insert_head(@o)
 	end
 
 	context "# ESTRUCTURA DE NODO " do
@@ -64,6 +67,14 @@ RSpec.describe List do
 
 			@l.insert_tail(@o)
 			expect(3).to eq(@l.tam)
+		end
+
+		it "Extrayendo la cabeza de la lista" do
+			nodo = @v.extract_head
+			expect(2).to eq(@l.tam)
+			expect(nil).to eq(nodo.prev)
+			expect(nil).to eq(nodo.next)
+			expect(3).to eq(nodo.value)
 		end
 
 	end
