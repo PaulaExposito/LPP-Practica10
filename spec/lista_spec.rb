@@ -79,6 +79,18 @@ RSpec.describe List do
 			expect(3).to eq(nodo.value)
 		end
 
+		it "Extrayendo la cola de la lista" do
+			nodo = @v.extract_tail
+			expect(2).to eq(@v.tam)
+			expect(nil).to eq(nodo.prev)
+			expect(nil).to eq(nodo.next)
+			expect(7).to eq(nodo.value)
+		end
+
+		it "Mostrando la lista" do
+			expect("(7, 8, 3").to eq(@v.to_s)
+		end
+
 	end
 end
 
