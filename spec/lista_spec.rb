@@ -5,7 +5,7 @@ require './lib/tdd/lista.rb'
 
 RSpec.describe List do
 
-	before :all do
+	before :each do
 		#Nodos
 		@n = Node.new(7, nil, nil)
 		@m = Node.new(8, nil, nil)
@@ -28,6 +28,11 @@ RSpec.describe List do
 		end
 
 		it "Se pueden encadenar dos nodos" do
+			puts "[DEBUG EN SPEC]"
+			puts "nodo ~> v:#{@n.value}, prev:#{@n.prev}, next:#{@n.next}\n"
+		       	puts "nodo ~> v:#{@m.value}, prev:#{@m.prev}, next:#{@m.next}\n"   
+			
+			puts "[DEBUG EN SPEC]"
 			@n.next = @m
 			@m.prev = @n
 			expect(@m).to eq(@n.next)
@@ -45,12 +50,12 @@ RSpec.describe List do
 			expect(@n).to eq(l.tail)
 		end
 
-		it "Insertamos elementos en la lista" do
-			@l.insert(@m)
-			expect(2).to eq(l.tam)
+		it "Insertamos elementos en la lista por la cabeza" do
+			@l.insert_head(@m)
+			expect(2).to eq(@l.tam)
 
-			@l.insert(@o)
-			expect(3).to eq(l.tam)
+			@l.insert_head(@o)
+			expect(3).to eq(@l.tam)
 		end
 
 	end
