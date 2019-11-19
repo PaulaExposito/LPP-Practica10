@@ -24,11 +24,17 @@ RSpec.describe List do
 
 		it "Se pueden encadenar dos nodos" do
 			n = Node.new(7, nil, nil)
-			m = Node.new(8, n, nil)
+			m = Node.new(8, nil, nil)
 			n.next = m
+			m.prev = n
 			expect(m).to eq(n.next)
+			expect(nil).to eq(n.prev)
+			expect(n).to eq(m.prev)
+			expect(nil).to eq(m.next)
 		end
+	end
 
-
+	context "# CLASE LISTA " do
+		
 	end
 end
