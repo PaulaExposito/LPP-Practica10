@@ -58,6 +58,14 @@ RSpec.describe List do
 			expect(3).to eq(@l.tam)
 		end
 
+		it "Insertar elementos por la cola de la lista" do
+			@l.insert_tail(@m)
+			expect(2).to eq(@l.tam)
+
+			@l.insert_tail(@o)
+			expect(3).to eq(@l.tam)
+		end
+
 	end
 end
 
