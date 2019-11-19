@@ -38,4 +38,17 @@ class List
 		end
 		@tam += 1
 	end
+
+	def extract_head
+		if tam > 0
+			aux = @head
+			@head = @head.prev
+			@head.next = nil
+			aux.prev = nil
+		end
+		puts "[DEBUG EXTRACT HEAD]: tam = #{@tam} \n"
+		@tam = @tam - 1
+		puts "[DEBUG EXTRACT HEAD]: tam = #{@tam} \n"
+		return aux
+	end
 end

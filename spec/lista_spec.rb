@@ -8,14 +8,15 @@ RSpec.describe List do
 	before :each do
 		#Nodos
 		@n = Node.new(7, nil, nil)
-		@m = Node.new(8, nil, nil)
-		@o = Node.new(3, nil, nil)
+		@n_l = Node.new(7, nil, nil)
+		@m = @m_l = Node.new(8, nil, nil)
+		@o = @o_l = Node.new(3, nil, nil)
 
 		#Lista
-		@l = List.new(@n)
-		@v = List.new(@n)
-		@v.insert_head(@m)
-		@v.insert_head(@o)
+		@l = List.new(@n_l)
+		@v = List.new(@n_l)
+		@v.insert_head(@m_l)
+		@v.insert_head(@o_l)
 	end
 
 	context "# ESTRUCTURA DE NODO " do
@@ -38,6 +39,7 @@ RSpec.describe List do
 			puts "[DEBUG EN SPEC]"
 			@n.next = @m
 			@m.prev = @n
+			@m.next = nil
 			expect(@m).to eq(@n.next)
 			expect(nil).to eq(@n.prev)
 			expect(@n).to eq(@m.prev)
@@ -54,24 +56,24 @@ RSpec.describe List do
 		end
 
 		it "Insertamos elementos en la lista por la cabeza" do
-			@l.insert_head(@m)
+			@l.insert_head(@m_l)
 			expect(2).to eq(@l.tam)
 
-			@l.insert_head(@o)
+			@l.insert_head(@o_l)
 			expect(3).to eq(@l.tam)
 		end
 
 		it "Insertar elementos por la cola de la lista" do
-			@l.insert_tail(@m)
+			@l.insert_tail(@m_l)
 			expect(2).to eq(@l.tam)
 
-			@l.insert_tail(@o)
+			@l.insert_tail(@o_l)
 			expect(3).to eq(@l.tam)
 		end
 
 		it "Extrayendo la cabeza de la lista" do
 			nodo = @v.extract_head
-			expect(2).to eq(@l.tam)
+			expect(2).to eq(@v.tam)
 			expect(nil).to eq(nodo.prev)
 			expect(nil).to eq(nodo.next)
 			expect(3).to eq(nodo.value)
