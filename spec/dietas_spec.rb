@@ -21,6 +21,10 @@ RSpec.describe List do
 		it "Emisiones de GEI diarias" do
 			expect(6.4).to eq(@maria.impacto_ambiental_diario(@espanola)[0])
 		end
+
+		it "Emisiones de GEI anuales" do
+			expect(2336).to eq(@maria.impacto_ambiental_anual(@espanola)[0])
+		end
 	end
 
 end
