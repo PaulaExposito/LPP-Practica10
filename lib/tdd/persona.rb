@@ -32,4 +32,9 @@ class Persona
 
 		return [alimento_conjunto.gei, alimento_conjunto.terreno]
 	end
+
+	def impacto_ambiental_anual (dieta)
+		a = impacto_ambiental_diario(dieta)
+		return [ a[0]*365, a[1]*365 ]
+	end
 end
