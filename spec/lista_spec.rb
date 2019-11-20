@@ -32,11 +32,6 @@ RSpec.describe List do
 		end
 
 		it "Se pueden encadenar dos nodos" do
-			puts "[DEBUG EN SPEC]"
-			puts "nodo ~> v:#{@n.value}, prev:#{@n.prev}, next:#{@n.next}\n"
-		       	puts "nodo ~> v:#{@m.value}, prev:#{@m.prev}, next:#{@m.next}\n"   
-			
-			puts "[DEBUG EN SPEC]"
 			@n.next = @m
 			@m.prev = @n
 			@m.next = nil
