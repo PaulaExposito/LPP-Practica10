@@ -17,13 +17,12 @@ class Persona
 			for l in 1...dieta.length
 				alimento_conjunto = alimento_conjunto + dieta[l]
 			end
+
 		elsif dieta.is_a?List
 			aux = dieta.tail			
 			alimento_conjunto = aux.value
 			aux = aux.next
 			while aux.next != nil do 
-				puts "[DEBUG PERSONA]: #{dieta.to_s} \n"
-				puts "[DEBUG PERSONA]: #{aux.value.to_s} \n"
 				alimento_conjunto = alimento_conjunto + aux.value
 				aux = aux.next
 			end
@@ -35,6 +34,6 @@ class Persona
 
 	def impacto_ambiental_anual (dieta)
 		a = impacto_ambiental_diario(dieta)
-		return [ a[0]*365, a[1]*365 ]
+		return [ (a[0]*365).round(2), (a[1]*365).round(2) ]
 	end
 end
