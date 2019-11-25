@@ -10,13 +10,15 @@ end
 class List
 	attr_reader :head, :tail, :tam
 
-	def initialize (node)
+	def initialize (dato)
+		node = Node.new(dato, nil, nil)
 		@head = node 
 		@tail = node
 		@tam = 1
 	end
 
-	def insert_head (node)
+	def insert_head (dato)
+		node = Node.new(dato, nil, nil)
 		if tam == 0
 			@head = @tail = node
 		else
@@ -28,7 +30,8 @@ class List
 		@tam += 1
 	end
 
-	def insert_tail (node)
+	def insert_tail (dato)
+		node = Node.new(dato, nil, nil)
 		if tam == 0
 			@head = @tail = node
 		else

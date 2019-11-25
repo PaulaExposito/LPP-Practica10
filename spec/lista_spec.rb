@@ -13,10 +13,10 @@ RSpec.describe List do
 		@o = @o_l = Node.new(3, nil, nil)
 
 		#Lista
-		@l = List.new(@n_l)
-		@v = List.new(@n_l)
-		@v.insert_head(@m_l)
-		@v.insert_head(@o_l)
+		@l = List.new(7)
+		@v = List.new(7)
+		@v.insert_head(8)
+		@v.insert_head(3)
 	end
 
 	context "# ESTRUCTURA DE NODO " do
@@ -44,25 +44,25 @@ RSpec.describe List do
 
 	context "# CLASE LISTA " do
 		it "Se crea una lista con cabeza y cola" do
-			l = List.new(@n)
+			l = List.new(7)
 			expect(true).to eq(l.is_a?List)
 			expect(@n).to eq(l.head)
 			expect(@n).to eq(l.tail)
 		end
 
 		it "Insertamos elementos en la lista por la cabeza" do
-			@l.insert_head(@m_l)
+			@l.insert_head(8)
 			expect(2).to eq(@l.tam)
 
-			@l.insert_head(@o_l)
+			@l.insert_head(3)
 			expect(3).to eq(@l.tam)
 		end
 
 		it "Insertar elementos por la cola de la lista" do
-			@l.insert_tail(@m_l)
+			@l.insert_tail(8)
 			expect(2).to eq(@l.tam)
 
-			@l.insert_tail(@o_l)
+			@l.insert_tail(3)
 			expect(3).to eq(@l.tam)
 		end
 
