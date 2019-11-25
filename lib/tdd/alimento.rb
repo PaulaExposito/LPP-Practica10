@@ -5,7 +5,15 @@
 # Clase Alimento
 
 class Alimento
+	include Comparable
 	attr_accessor :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno, :cantidad
+
+	def <=> (anOther)
+		return nil unless anOther.instance_of?Alimento
+		temp1 = @proteinas + @carbohidratos + @lipidos + @gei + @terreno
+		temp2 = anOther.proteinas + anOther.carbohidratos + anOther.lipidos + anOther.gei + anOther.terreno
+		temp1 <=> temp2
+	end
 
 	def initialize (alimento, nombre, cantidad)
 		@nombre = nombre
