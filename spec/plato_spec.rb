@@ -42,7 +42,7 @@ RSpec.describe Plato do
 		end
 
 		it "Plato formateado (to_s)" do
-			expect("cafe leche: 65.2 kcal").to eq(@plato1.vct)
+			expect("(cafe leche: 65.2 kcal)").to eq(@plato1.to_s)
 		end	
 	end
 end

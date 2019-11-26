@@ -96,4 +96,8 @@ class Plato
 
 		return kcal
 	end
+
+	def to_s
+		return "(#{@nombre}: #{vct} kcal)"
+	end
 end
