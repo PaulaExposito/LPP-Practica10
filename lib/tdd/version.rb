@@ -13,5 +13,6 @@ Leche = [3.3, 4.8, 3.2, 3.2, 8.9]
 Tofu = [3.9, 100, 165, 2.0, 2.2]   # Valores diferentes a la tabla
 Pollo = [20.6, 0.0, 5.6, 5.7, 7.1]
 Huevos = [3.0, 300.0, 90.0, 4.2, 5.7]    # Valores cambiados
+Cafe = [0.1,0.0,0.4,0.4,0.3]
 
 end
