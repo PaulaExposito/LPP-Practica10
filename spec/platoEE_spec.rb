@@ -20,5 +20,9 @@ RSpec.describe PlatoEE do
 			expect(3.6).to eq(@plato1.plato_gei)
 		end
 
+		it "Estimación m2 de terreno utilizados" do
+			expect(9.2).to eq(@plato1.plato_terreno)
+		end
+
 	end
 end
