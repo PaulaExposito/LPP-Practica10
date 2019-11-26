@@ -20,7 +20,7 @@ RSpec.describe Plato do
 		end		
 
 		it "Existe un conjunto de gramos de alimentos" do
-			expect(false).to eq(@plato1.cgramoss.nil?)
+			expect(false).to eq(@plato1.cjto_gramos.nil?)
 		end			
 	end
 end
