@@ -81,6 +81,19 @@ RSpec.describe TDD do
 			expect(81.8).to eq(@a3.valor_energetico)
 			expect(479.2).to eq(@a4.valor_energetico)
 			expect(202).to eq(@a5.valor_energetico)
+		end
+
+		context " P8: AÑADIENDO COMPARABLE A ALIMENTO " do
+			it "Se comparan correctamente dos alimentos" do
+				expect(true).to eq(@a1 < @a2)
+				expect(false).to eq(@a1 > @a2)
+				expect(true).to eq(@a1 <= @a2)
+				expect(false).to eq(@a1 >= @a2)
+				expect(false).to eq(@a1 == @a2)
+				expect(true).to eq(@a1.between?(@a3, @a2))
+				expect(false).to eq(@a3.between?(@a1, @a2))
+				expect(true).to eq(@a1 == @a1)
+			end
 		end	
 	end
 

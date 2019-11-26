@@ -9,6 +9,7 @@ end
 
 class List
 	attr_reader :head, :tail, :tam
+	include Enumerable
 
 	def initialize (dato)
 		node = Node.new(dato, nil, nil)
@@ -75,4 +76,12 @@ class List
 		end
 		c = c + aux.value.to_s + ")"
 	end
+
+	#def each
+	#	aux = @tail
+	#	while aux.next != nil do
+	#		yield aux.value
+	#		aux = aux.next
+	#	end
+	#end
 end

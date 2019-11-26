@@ -10,9 +10,10 @@ class Alimento
 
 	def <=> (anOther)
 		return nil unless anOther.instance_of?Alimento
-		temp1 = @proteinas + @carbohidratos + @lipidos + @gei + @terreno
-		temp2 = anOther.proteinas + anOther.carbohidratos + anOther.lipidos + anOther.gei + anOther.terreno
-		temp1 <=> temp2
+#		temp1 = @proteinas + @carbohidratos + @lipidos + @gei + @terreno
+#		temp2 = anOther.proteinas + anOther.carbohidratos + anOther.lipidos + anOther.gei + anOther.terreno
+#		temp1 <=> temp2
+		valor_energetico <=> anOther.valor_energetico
 	end
 
 	def initialize (alimento, nombre, cantidad)
