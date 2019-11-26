@@ -5,13 +5,18 @@ require './lib/tdd/lista.rb'
 
 RSpec.describe Plato do
 	before :each do
+		lista_alimentos = List.new(Alimento.new(TDD::Cafe, "cafe", 1))
+		lista_alimentos.insert_head(Alimento.new(TDD::Leche, "leche", 1))
+		@plato1 = Plato.new(lista_alimentos)
 	end
 
 	context "Plato con información nutricional" do
 		it "Existe un plato con nombre" do
-			plato1 = List.new(Alimento.new(TDD::Cafe), "cafe", 1)
-			plato1.insert(Alimento.new(TDD::Leche), "leche", 1)
-			expect("cafe leche").to eq(plato1.nombre)
+			expect("cafe leche").to eq(@plato1.nombre)
 		end
+
+		it "Existe un conjunto de alimentos" do
+			expect(false).to eq(@plato1.cjto_alimentos.nil?)
+		end			
 	end
 end

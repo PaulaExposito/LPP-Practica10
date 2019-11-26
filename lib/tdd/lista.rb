@@ -1,21 +1,20 @@
 # Estructura del nodo (valor_nodo, nodo_anterior, nodo_sucesor)
 Node = Struct.new(:value, :next, :prev) do
-	#def ==(o)
-	#	if value == o.value and next_ == o.next and prev == o.next do
-	#		return true
-	#	end
-	#end
 end
 
 class List
-	attr_reader :head, :tail, :tam
+	attr_accessor :head, :tail, :tam
 	include Enumerable
 
 	def initialize (dato)
-		node = Node.new(dato, nil, nil)
-		@head = node 
-		@tail = node
-		@tam = 1
+		if (dato == nil) 
+			@head, @tail, @tam = nil, nil, 0
+		else
+			node = Node.new(dato, nil, nil)
+			@head = node 
+			@tail = node
+			@tam = 1
+		end
 	end
 
 	def insert_head (dato)
@@ -68,7 +67,6 @@ class List
 	end
 
 	def to_s
-		puts "[DEBUG] \n"
 		aux = @tail
 		c = "("
 		while aux.next != nil do
