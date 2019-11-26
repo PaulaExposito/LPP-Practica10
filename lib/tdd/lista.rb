@@ -68,6 +68,7 @@ class List
 	end
 
 	def to_s
+		puts "[DEBUG] \n"
 		aux = @tail
 		c = "("
 		while aux.next != nil do
@@ -77,11 +78,11 @@ class List
 		c = c + aux.value.to_s + ")"
 	end
 
-	#def each
-	#	aux = @tail
-	#	while aux.next != nil do
-	#		yield aux.value
-	#		aux = aux.next
-	#	end
-	#end
+	def each
+		aux = @tail
+		while aux.next != nil do
+			yield aux.value
+			aux = aux.next
+		end
+	end
 end

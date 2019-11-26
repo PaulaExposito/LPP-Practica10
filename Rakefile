@@ -6,6 +6,7 @@ RSpec::Core::RakeTask.new(:spec)
 desc "Solo las pruebas de lista"
 task :lista do
 	sh "rspec ./spec/dietas_spec.rb"
+	sh "rspec ./spec/lista_spec.rb"
 end
 
 task :default => :spec
