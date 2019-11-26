@@ -84,5 +84,6 @@ class List
 			yield aux.value
 			aux = aux.next
 		end
+		yield aux.value
 	end
 end
