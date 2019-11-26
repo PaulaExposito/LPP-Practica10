@@ -3,6 +3,7 @@ require "tdd/alimento"
 require "tdd/persona"
 require "tdd/lista"
 require "tdd/plato"
+require "tdd/platoEE"
 
 module TDD
   class Error < StandardError; end
