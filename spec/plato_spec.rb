@@ -39,6 +39,10 @@ RSpec.describe Plato do
 
 		it "Valor calórico total del plato" do
 			expect(65.2).to eq(@plato1.vct)
+		end
+
+		it "Plato formateado (to_s)" do
+			expect("cafe leche: 65.2 kcal").to eq(@plato1.vct)
 		end	
 	end
 end
