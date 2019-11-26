@@ -21,6 +21,10 @@ RSpec.describe Plato do
 
 		it "Existe un conjunto de gramos de alimentos" do
 			expect(false).to eq(@plato1.cjto_gramos.nil?)
-		end			
+		end		
+
+		it "Porcetaje de proteínas" do
+			expect(29).to eq(@plato1.%proteinas)
+		end	
 	end
 end
