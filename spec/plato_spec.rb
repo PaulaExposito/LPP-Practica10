@@ -28,5 +28,9 @@ RSpec.describe Plato do
 		it "Porcetaje de proteínas" do
 			expect(29).to eq(@plato1.x100_proteinas)
 		end	
+		
+		it "Porcetaje de lipidos" do
+			expect(31).to eq(@plato1.x100_lipidos)
+		end	
 	end
 end
