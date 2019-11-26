@@ -1,5 +1,5 @@
 class PlatoEE < Plato
-	attr_accessor :plato_gei#, :plato_terreno
+	attr_accessor :plato_gei, :plato_terreno
 
 	def initialize (alimentos)
 		super(alimentos)
@@ -14,6 +14,8 @@ class PlatoEE < Plato
 
 		@plato_gei += aux.value.gei
 		@plato_terreno += aux.value.terreno
+		@plato_gei = @plato_gei.round(2)
+		@plato_terreno = @plato_terreno.round(2)
 	end	
 
 end
