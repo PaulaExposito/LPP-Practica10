@@ -1,6 +1,6 @@
 require './lib/tdd/lista.rb'
 class Plato
-	attr_accessor :nombre#, :cjto_alimentos, :cjto_gramos
+	attr_accessor :nombre, :cjto_alimentos#, :cjto_gramos
 
 	def initialize (alimentos)
 		return nil unless alimentos.instance_of?List
