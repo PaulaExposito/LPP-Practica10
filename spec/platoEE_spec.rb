@@ -24,5 +24,8 @@ RSpec.describe PlatoEE do
 			expect(9.2).to eq(@plato1.plato_terreno)
 		end
 
+		it "Método to_s utilizando clase madre" do
+			expect("{(cafe leche: 65.2 kcal)(3.6 kgCO2eq, 9.2 m2año)}").to eq(@plato1.to_s)
+		end
 	end
 end
