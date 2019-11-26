@@ -11,7 +11,7 @@ end
 
 desc "Solo las pruebas de plato"
 task :plato do
-	sh "rspec ./spec/plato_spec.rb"
+	sh "rspec ./spec/platoEE_spec.rb"
 end
 
 task :default => :spec
