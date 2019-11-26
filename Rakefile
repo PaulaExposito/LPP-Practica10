@@ -9,4 +9,9 @@ task :lista do
 	sh "rspec ./spec/lista_spec.rb"
 end
 
+desc "Solo las pruebas de plato"
+task :plato do
+	sh "rspec ./spec/plato_spec.rb"
+end
+
 task :default => :spec
