@@ -83,4 +83,17 @@ class Plato
 		
 		return ((cont_carbohidratos / cont_gramos).round(2) * 100).round(2)
 	end
+
+	def vct
+		aux = @cjto_alimentos.tail
+		kcal = 0
+
+		while aux.next != nil do
+			kcal += (aux.value.proteinas * 4 + aux.value.carbohidratos * 4 + aux.value.lipidos * 9)
+			aux = aux.next
+		end	
+		kcal += (aux.value.proteinas * 4 + aux.value.carbohidratos * 4 + aux.value.lipidos * 9)
+
+		return kcal
+	end
 end
