@@ -64,4 +64,23 @@ class Plato
 		
 		return ((cont_lipidos / cont_gramos).round(2) * 100).round(2)
 	end
+	
+	def x100_carbohidratos
+		cont_carbohidratos = 0
+		cont_gramos = 0
+		aux = @cjto_alimentos.tail
+		aux2 = @cjto_gramos.tail
+
+		while aux.next != nil do
+			cont_carbohidratos += aux.value.carbohidratos
+			cont_gramos += aux2.value
+			aux = aux.next
+			aux2 = aux2.next
+		end
+		
+		cont_carbohidratos += aux.value.carbohidratos
+		cont_gramos += aux2.value
+		
+		return ((cont_carbohidratos / cont_gramos).round(2) * 100).round(2)
+	end
 end
