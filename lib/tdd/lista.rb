@@ -7,7 +7,7 @@ class List
 	include Enumerable
 
 	def initialize (dato)
-		if (dato == nil) 
+		if (dato.instance_of?(NilClass)) 
 			@head, @tail, @tam = nil, nil, 0
 		else
 			node = Node.new(dato, nil, nil)

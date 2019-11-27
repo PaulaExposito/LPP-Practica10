@@ -4,7 +4,8 @@ class Plato
 	include Comparable
 
 	def <=> (anOther)
-		@total_gramos <=> @anOther.total_gramos
+		raise TypeError, "argumento no es tipo plato" unless anOther.is_a?Plato
+		@total_gramos <=> anOther.total_gramos
 	end
 
 	def initialize (alimentos)

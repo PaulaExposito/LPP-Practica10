@@ -102,24 +102,24 @@ RSpec.describe PlatoEE do
 		end
 
 		it "Comparando platos de la dieta vasca" do
-			expect(true).to eq(@va_platoEE1 > @va_platoEE2)
-			expect(true).to eq(@va_platoEE1 >= @va_platoEE2)
-			expect(false).to eq(@va_platoEE1 < @va_platoEE2)
+			expect(true).to eq(@va_platoEE1 < @va_platoEE2)
+			expect(true).to eq(@va_platoEE1 <= @va_platoEE2)
+			expect(false).to eq(@va_platoEE1 > @va_platoEE2)
 			expect(false).to eq(@va_platoEE1 == @va_platoEE2)
 		end
 
 		it "Comparando platos de la dieta vegetaria" do
-			expect(true).to eq(@ve_platoEE1 < @ve_platoEE2)
-			expect(true).to eq(@ve_platoEE1 <= @ve_platoEE2)
-			expect(false).to eq(@ve_platoEE1 > @ve_platoEE2)
+			expect(true).to eq(@ve_platoEE1 > @ve_platoEE2)
+			expect(true).to eq(@ve_platoEE1 >= @ve_platoEE2)
+			expect(false).to eq(@ve_platoEE1 < @ve_platoEE2)
 			expect(false).to eq(@ve_platoEE1 == @ve_platoEE2)
 		end
 
 		it "Comparando platos de la dieta vegetativa" do
-			expect(true).to eq(@veg_platoEE1 > @veg_platoEE2)
+			expect(false).to eq(@veg_platoEE1 > @veg_platoEE2)
 			expect(true).to eq(@veg_platoEE1 >= @veg_platoEE2)
 			expect(false).to eq(@veg_platoEE1 < @veg_platoEE2)
-			expect(false).to eq(@veg_platoEE1 == @veg_platoEE2)
+			expect(true).to eq(@veg_platoEE1 == @veg_platoEE2)
 		end
 
 		it "Comparando platos de la dieta locura por la carne" do
@@ -131,11 +131,11 @@ RSpec.describe PlatoEE do
 
 
 		it "Prueba para enumerar listas de platos" do
-			expect(" ").to eq(@espanola.sort.to_s)
-			expect(" ").to eq(@espanola.max.to_s)
-			expect(" ").to eq(@vasca.min.to_s)
-			expect(" ").to eq(@locuraXcarne.collect { |i| i.to_s + "x" }.to_s)
-			expect(" ").select(@vegetativa.select { |i| i.between?(10, 123) }.to_s)
+			expect([@es_platoEE1, @es_platoEE2]).to eq(@espanola.sort)
+			expect(@es_platoEE2).to eq(@espanola.max)
+			expect(@va_platoEE1).to eq(@vasca.min)
+			expect([@es_platoEE1, @es_platoEE1]).to eq(@locuraXcarne.collect { |i| i = @es_platoEE1 })
+			expect([@ve_platoEE2]).to eq(@vegetaria.select { |i| i < @ve_platoEE1 })
 		end
 
 	end
