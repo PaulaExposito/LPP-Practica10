@@ -1,6 +1,11 @@
 require './lib/tdd/lista.rb'
 class Plato
-	attr_accessor :nombre, :cjto_alimentos, :cjto_gramos
+	attr_accessor :nombre, :cjto_alimentos, :cjto_gramos, :total_gramos
+	include Comparable
+
+	def <=> (anOther)
+		@total_gramos <=> @anOther.total_gramos
+	end
 
 	def initialize (alimentos)
 		return nil unless alimentos.instance_of?List
@@ -22,6 +27,7 @@ class Plato
 		@cjto_alimentos.insert_head(aux.value)
 		cont = 0
 		cont = aux.value.proteinas + aux.value.carbohidratos + aux.value.lipidos
+		@total_gramos = cont.round(2)
 		@cjto_gramos.insert_head(cont)
 
 

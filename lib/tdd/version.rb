@@ -10,9 +10,12 @@ Chocolate = [5.3, 47.0, 30.0, 2.3, 3.4]
 Salmon = [19.9, 0.0, 13.6, 6.0, 3.7]
 Lentejas = [23.5, 52.0, 1.4, 0.4, 3.4]
 Leche = [3.3, 4.8, 3.2, 3.2, 8.9]
-Tofu = [3.9, 100, 165, 2.0, 2.2]   # Valores diferentes a la tabla
+Tofu = [8, 1.9, 4.8, 2.0, 2.2]   # Valores diferentes a la tabla
 Pollo = [20.6, 0.0, 5.6, 5.7, 7.1]
-Huevos = [3.0, 300.0, 90.0, 4.2, 5.7]    # Valores cambiados
+Huevos = [13, 1.1, 11.0, 4.2, 5.7]    # Valores cambiados
 Cafe = [0.1,0.0,0.4,0.4,0.3]
+Cerveza = [0.5,3.6,0.0,0.24,0.22]
+Nuez = [20,21,54,0.3,7.9]
+Cerdo = [21.5,0,6.3,7.6,11]
 
 end

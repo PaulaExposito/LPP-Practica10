@@ -1,5 +1,6 @@
 class PlatoEE < Plato
 	attr_accessor :plato_gei, :plato_terreno
+	include Comparable
 
 	def initialize (alimentos)
 		super(alimentos)
@@ -25,4 +26,8 @@ class PlatoEE < Plato
 		return s
 	end	
 
+	def <=> (anOther)
+		return nil unless anOther.instance_of?PlatoEE
+		(@plato_gei) <=> (anOther.plato_gei)
+	end
 end
