@@ -129,6 +129,15 @@ RSpec.describe PlatoEE do
 			expect(false).to eq(@lxc_platoEE1 == @lxc_platoEE2)
 		end
 
+
+		it "Prueba para enumerar listas de platos" do
+			expect(" ").to eq(@espanola.sort.to_s)
+			expect(" ").to eq(@espanola.max.to_s)
+			expect(" ").to eq(@vasca.min.to_s)
+			expect(" ").to eq(@locuraXcarne.collect { |i| i.to_s + "x" }.to_s)
+			expect(" ").select(@vegetativa.select { |i| i.between?(10, 123) }.to_s)
+		end
+
 	end
 
 end
