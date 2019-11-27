@@ -31,8 +31,15 @@ RSpec.describe PlatoEE do
 
 	context "Probando clase, tipo y pertenencia de PlatoEE" do
 		it "Comprobar la clase de un objeto" do
+			expect(PlatoEE).to eq(@plato1.class)
+		end
+
+		it "Comprobar tipo de la clase" do
 			expect(true).to eq(@plato1.instance_of?PlatoEE)
 			expect(false).to eq(@plato1.instance_of?Plato)
+		end
+
+		it "Comprobar pertenecia a una jerarquía" do
 			expect(true).to eq(@plato1.is_a?PlatoEE)
 			expect(true).to eq(@plato1.is_a?Plato)
 			expect(true).to eq(@plato1.is_a?Object)
