@@ -28,4 +28,14 @@ RSpec.describe PlatoEE do
 			expect("{(cafe leche: 65.2 kcal)(3.6 kgCO2eq, 9.2 m2año)}").to eq(@plato1.to_s)
 		end
 	end
+
+	context "Probando clase, tipo y pertenencia de PlatoEE" do
+		it "Comprobar la clase de un objeto" do
+			expect(true).to eq(@plato1.instance_of?PlatoEE)
+			expect(false).to eq(@plato1.instance_of?Plato)
+			expect(true).to eq(@plato1.is_a?PlatoEE)
+			expect(true).to eq(@plato1.is_a?Plato)
+			expect(true).to eq(@plato1.is_a?Object)
+		end
+	end
 end
