@@ -47,7 +47,7 @@ RSpec.describe PlatoEE do
 	end
 
 	context "Probando PlatoEE con 5 dietas" do
-		before :each do
+=begin		before :each do
 			@es_plato1 = List.new(Alimento.new(TDD::Leche, "leche", 1))
 			@es_plato1.insert_head(Alimento.new(TDD::Cafe, "cafe", 1))
 			@es_platoEE1 = PlatoEE.new(@es_plato1)
@@ -137,7 +137,39 @@ RSpec.describe PlatoEE do
 			expect([@es_platoEE1, @es_platoEE1]).to eq(@locuraXcarne.collect { |i| i = @es_platoEE1 })
 			expect([@ve_platoEE2]).to eq(@vegetaria.select { |i| i < @ve_platoEE1 })
 		end
+=end
+	end
 
+	context "Práctica 9" do
+		before :each do
+			@p1 = List.new(Alimento.new(TDD::Camarones, "camarones", 1))
+			@p1.insert_head(Alimento.new(TDD::Cerveza, "cerveza", 1))
+			@primero = PlatoEE.new(@p1)
+
+			@p2 = List.new(Alimento.new(TDD::Pollo, "pollo", 1))
+			@p2.insert_head(Alimento.new(TDD::Lentejas, "lentejas", 1))
+			@segundo = PlatoEE.new(@p2)
+
+			@p3 = List.new(Alimento.new(TDD::Cafe, "café", 1))
+			@postre = PlatoEE.new(@p3)
+
+			@menu = [@primero, @segundo, @postre]
+		end
+
+		it "Prueba para obtener el plato con mayor huella nutricional" do
+			p @menu.collect {|n| n = n.huella_nutricional}
+			p @menu.max.to_s
+
+			expect(@menu.max).to eq(@segundo)
+			expect(@menu.min).to eq(@postre)
+		end
+
+=begin			precio = [12.70, 7.25, 0.90]
+			precio_nuevo = precio.collect { |p| p * @menu.max.huella_nutricional }
+			p precio
+			p precio_nuevo 
+=end		
+		
 	end
 
 end
