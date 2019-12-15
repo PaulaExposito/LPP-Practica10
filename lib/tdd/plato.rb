@@ -1,4 +1,21 @@
 require './lib/tdd/lista.rb'
+
+# = plato.rb
+# 
+# La clase plato contiene la información sobre el:
+# - nombre de un plato
+# - el conjunto de alimentos que forman parte del plato
+# - el total de gramos del plato
+#
+# Las funcionalidades de la clase son:
+# - Calcular el procentaje de proteínas del plato
+# - Calcular el procentaje de carbohidratos del plato
+# - Calcular el procentaje de lípidos del plato
+# - Calcular el valor energético del plato
+# - Calcular el índice de energía del plato
+#
+# Esta clase utiliza el módulo Comparable
+#
 class Plato
 	attr_accessor :nombre, :cjto_alimentos, :cjto_gramos, :total_gramos
 	include Comparable

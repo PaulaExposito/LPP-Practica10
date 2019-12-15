@@ -1,18 +1,30 @@
 
-# Tipos de alimentos que se pueden introducir al programa
-
-
-# Clase Alimento
-
+# = alimento.rb
+#
+# autor:: Paula Expósito Estévez
+# asignatura:: Lenguajes y Paradigmas de Programación
+#
+# == Clase Alimento
+# Esta clase define los alimentos con los que trabajará el programa, contiene:
+# - El nombre del alimento
+# - La cantidad de proteínas por cada 100 gramos
+# - La cantidad de carbohidratos por cada 100 gramos
+# - La cantidad de lipidos por cada 100 gramos
+# - La cantidad de gases de efecto invernadero emitidos  por porción
+# - La cantidad de terreno utilizado por metro cuadrado
+#
+# Los funcionalidades principales de la clase son:
+# - Sumar alimentos
+# - Calcular el valor energético de un alimento
+# 
+# Se hace uso del módulo Comparable 
+#
 class Alimento
 	include Comparable
 	attr_accessor :nombre, :proteinas, :carbohidratos, :lipidos, :gei, :terreno, :cantidad
 
 	def <=> (anOther)
 		return nil unless anOther.instance_of?Alimento
-#		temp1 = @proteinas + @carbohidratos + @lipidos + @gei + @terreno
-#		temp2 = anOther.proteinas + anOther.carbohidratos + anOther.lipidos + anOther.gei + anOther.terreno
-#		temp1 <=> temp2
 		valor_energetico <=> anOther.valor_energetico
 	end
 

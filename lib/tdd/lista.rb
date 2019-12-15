@@ -1,7 +1,24 @@
+# = lista.rb
+#
+# == Estructura Node
 # Estructura del nodo (valor_nodo, nodo_anterior, nodo_sucesor)
 Node = Struct.new(:value, :next, :prev) do
 end
 
+# == Clase Lista
+#
+# La clase lista contiene nodos anidados, en cada nodo hay un dato y dos referencias a otros nodos
+#
+# Elementos de la clase List
+# - head -> es la referencia al siguiente elemento
+# - tail -> referencia al elemento anterior
+# - tam -> número de nodos que hay en una lista
+#
+# Funcionalidades:
+# - Insertar elementos por la cabeza y la cola de la lista
+# - Eliminar elementos por la cabeza y la cola de la lista
+#
+# La clase List incluye el módulo Enumerable para ordenar las listas
 class List
 	attr_accessor :head, :tail, :tam
 	include Enumerable

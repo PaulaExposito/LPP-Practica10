@@ -1,3 +1,13 @@
+# = platoEE.rb
+#
+# La clase PlatoEE hereda de la clase madre Plato
+# Esta clase incluye la información sobre la eficiencia energética de un plato, es decir, los gases de efecto invernadero y el uso del terreno.
+#
+# Funcionalidades:
+# - Calcular el índice de la huella de carbono de un plato
+# - Calcular la huella ambiental de un plato
+#
+# Esta clase utiliza el módulo Comparable e invalida el método <=> de la clase madre.
 class PlatoEE < Plato
 	attr_accessor :plato_gei, :plato_terreno
 

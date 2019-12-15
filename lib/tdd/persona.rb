@@ -1,7 +1,6 @@
 # Clase persona, almacena el nombre de una persona y su sexo
 # Se utiliza para calcular el impacto ambiental diario de la dieta de una persona de entre 10-39 años
 #
-
 class Persona
 	attr_accessor :nombre, :sexo
 
