@@ -1,6 +1,24 @@
 class PlatoEE < Plato
 	attr_accessor :plato_gei, :plato_terreno
-	#include Comparable
+
+	include Comparable
+
+	def <=> (anOther)
+		raise TypeError, "asrgumento no es de tipo platoEE" unless anOther.is_a?PlatoEE
+		self.huella_nutricional <=> anOther.huella_nutricional
+	end
+
+	def huella_nutricional
+		media = ((indice_energia + indice_huella_carbono)/2).round(2)
+	end
+
+	def indice_huella_carbono
+		huella_carbono = @plato_gei * 1000
+		indice_hc = 1 if huella_carbono < 800
+		indice_hc = 3 if huella_carbono > 1200
+		indice_hc = 2 if indice_hc == nil
+		return indice_hc
+	end
 
 	def initialize (alimentos)
 		raise TypeError, "no es una lista de alimentos" unless alimentos.is_a?List
@@ -27,10 +45,4 @@ class PlatoEE < Plato
 		s << "(#{@plato_gei} kgCO2eq, #{@plato_terreno} m2año)}"
 		return s
 	end	
-
-	#def <=> (anOther)
-	#	return nil unless anOther.instance_of?PlatoEE
-	#	#(@plato_gei) <=> (anOther.plato_gei)
-	#	super <=> anOther
-	#end
 end

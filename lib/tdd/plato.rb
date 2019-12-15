@@ -101,7 +101,15 @@ class Plato
 		end	
 		kcal += (aux.value.proteinas * 4 + aux.value.carbohidratos * 4 + aux.value.lipidos * 9)
 
-		return kcal
+		return kcal.round(2)
+	end
+
+	def indice_energia
+		energia = self.vct
+		ind_energia = 1 if energia < 670
+		ind_energia = 3 if energia > 830
+		ind_energia = 2 if ind_energia == nil
+		return ind_energia
 	end
 
 	def to_s
