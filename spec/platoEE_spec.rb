@@ -154,21 +154,21 @@ RSpec.describe PlatoEE do
 			@postre = PlatoEE.new(@p3)
 
 			@menu = [@primero, @segundo, @postre]
+			@precio = [12.70, 7.25, 0.90]
 		end
 
 		it "Prueba para obtener el plato con mayor huella nutricional" do
-			p @menu.collect {|n| n = n.huella_nutricional}
-			p @menu.max.to_s
-
 			expect(@menu.max).to eq(@segundo)
+		end
+		
+		it "Prueba para obtener el plato con menor huella nutricional" do
 			expect(@menu.min).to eq(@postre)
 		end
 
-=begin			precio = [12.70, 7.25, 0.90]
-			precio_nuevo = precio.collect { |p| p * @menu.max.huella_nutricional }
-			p precio
-			p precio_nuevo 
-=end		
+		it "Prueba para incrementar el precio del menú" do
+			precio_nuevo = @precio.collect { |p| p * @menu.max.huella_nutricional }
+			expect(precio_nuevo).to eq([25.40, 14.50, 1.80])
+		end		
 		
 	end
 
