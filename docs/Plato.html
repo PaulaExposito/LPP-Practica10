@@ -115,6 +115,17 @@
 
   <section class="description">
     
+<h1 id="class-Plato-label-plato.rb">plato.rb<span><a href="#class-Plato-label-plato.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>La clase plato contiene la información sobre el:</p>
+<ul><li>
+<p>nombre de un plato</p>
+</li><li>
+<p>el conjunto de alimentos que forman parte del plato</p>
+</li><li>
+<p>el total de gramos del plato</p>
+</li></ul>
+
   </section>
 
   
@@ -140,7 +151,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y odificación de la información de las variables de instancia de un plato</p>
         
         </div>
       </div>
@@ -153,7 +164,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y odificación de la información de las variables de instancia de un plato</p>
         
         </div>
       </div>
@@ -166,7 +177,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y odificación de la información de las variables de instancia de un plato</p>
         
         </div>
       </div>
@@ -179,7 +190,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y odificación de la información de las variables de instancia de un plato</p>
         
         </div>
       </div>
@@ -207,13 +218,13 @@
 
         <div class="method-description">
           
-          
+          <p>Invalidación del método initialize para instanciar objetos de tipo <a href="Plato.html"><code>Plato</code></a> Recibe una lista de alimentos y rellena convenientemente la información de las variables de instancia al recorrer la lista de alimentos</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 11</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">alimentos</span>)
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">alimentos</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">List</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-identifier">alimentos</span>.<span class="ruby-identifier">tail</span>
@@ -236,8 +247,6 @@
         <span class="ruby-identifier">cont</span> = <span class="ruby-identifier">aux</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">proteinas</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">aux</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">carbohidratos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">aux</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">lipidos</span>
         <span class="ruby-ivar">@total_gramos</span> = <span class="ruby-identifier">cont</span>.<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)
         <span class="ruby-ivar">@cjto_gramos</span>.<span class="ruby-identifier">insert_head</span>(<span class="ruby-identifier">cont</span>)
-
-
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -270,13 +279,13 @@
 
         <div class="method-description">
           
-          
+          <p>Invalidación del método &lt;=&gt; del módulo Comparable para comparar platos</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 6</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">anOther</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;argumento no es tipo plato&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Plato</span>
         <span class="ruby-ivar">@total_gramos</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">total_gramos</span>
@@ -304,13 +313,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el índice de energía de un plato Es un valor entre 1 y 3</p>
           
           
 
           
           <div class="method-source-code" id="indice_energia-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 123</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indice_energia</span>
         <span class="ruby-identifier">energia</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">vct</span>
         <span class="ruby-identifier">ind_energia</span> = <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">energia</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">670</span>
@@ -341,13 +350,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que invalida el método <a href="Plato.html#method-i-to_s"><code>to_s</code></a> y formatea la forma de representar la información de un plato</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 115</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;(#{@nombre}: #{vct} kcal)&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -374,13 +383,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el valor calórico total de un plato</p>
           
           
 
           
           <div class="method-source-code" id="vct-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 94</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">vct</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@cjto_alimentos</span>.<span class="ruby-identifier">tail</span>
         <span class="ruby-identifier">kcal</span> = <span class="ruby-value">0</span>
@@ -416,13 +425,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el porcentaje de carbohidratos en un plato</p>
           
           
 
           
           <div class="method-source-code" id="x100_carbohidratos-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 75</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">x100_carbohidratos</span>
         <span class="ruby-identifier">cont_carbohidratos</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">cont_gramos</span> = <span class="ruby-value">0</span>
@@ -464,13 +473,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el porcentaje de lípidos en un plato</p>
           
           
 
           
           <div class="method-source-code" id="x100_lipidos-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 56</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">x100_lipidos</span>
         <span class="ruby-identifier">cont_lipidos</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">cont_gramos</span> = <span class="ruby-value">0</span>
@@ -512,13 +521,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el porcentaje de proteínas de un plato</p>
           
           
 
           
           <div class="method-source-code" id="x100_proteinas-source">
-            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/tdd/plato.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">x100_proteinas</span>
         <span class="ruby-identifier">cont_proteinas</span> = <span class="ruby-value">0</span>
         <span class="ruby-identifier">cont_gramos</span> = <span class="ruby-value">0</span>

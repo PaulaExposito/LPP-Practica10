@@ -14,15 +14,14 @@ end
 # - tail -> referencia al elemento anterior
 # - tam -> número de nodos que hay en una lista
 #
-# Funcionalidades:
-# - Insertar elementos por la cabeza y la cola de la lista
-# - Eliminar elementos por la cabeza y la cola de la lista
-#
-# La clase List incluye el módulo Enumerable para ordenar las listas
 class List
+
+	# Métodos para el acceso y modificación de los elementos de una lista
 	attr_accessor :head, :tail, :tam
 	include Enumerable
 
+	#Invalidación del método initialize para instanciar un objeto de tipo List
+	#Recibe un dato que se meterá en un Node y posteriormente se inyecta en la lista
 	def initialize (dato)
 		if (dato.instance_of?(NilClass)) 
 			@head, @tail, @tam = nil, nil, 0
@@ -34,6 +33,7 @@ class List
 		end
 	end
 
+	# Método que inserta un nodo por la cabeza de la lista
 	def insert_head (dato)
 		node = Node.new(dato, nil, nil)
 		if tam == 0
@@ -47,6 +47,7 @@ class List
 		@tam += 1
 	end
 
+	# Método que inserta un nodo por la cola de la lista
 	def insert_tail (dato)
 		node = Node.new(dato, nil, nil)
 		if tam == 0
@@ -59,6 +60,7 @@ class List
 		@tam += 1
 	end
 
+	# Método que elimina un elemento por la cabeza de la lista
 	def extract_head
 		if tam > 0
 			aux = @head
@@ -71,6 +73,7 @@ class List
 		return aux
 	end
 
+	# Método que extrae un elemento por la cola de lista
 	def extract_tail
 		if tam > 0
 			aux = @tail
@@ -83,6 +86,7 @@ class List
 		return aux
 	end
 
+	# Método que invalida el método to_s para mostrar los datos de una lista
 	def to_s
 		aux = @tail
 		c = "("
@@ -93,6 +97,8 @@ class List
 		c = c + aux.value.to_s + ")"
 	end
 
+	# Método que define cómo se enumera una lista
+	# Hace uso del módulo Enumerable
 	def each
 		aux = @tail
 		while aux.next != nil do

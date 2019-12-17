@@ -56,6 +56,15 @@
   </div>
 
   
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#class-Alimento-label-alimento.rb">alimento.rb</a>
+    <li><a href="#class-Alimento-label-Clase+Alimento">Clase Alimento</a>
+  </ul>
+</div>
+
 
   <div id="class-metadata">
     
@@ -109,7 +118,31 @@
 
   <section class="description">
     
-<p>Clase <a href="Alimento.html"><code>Alimento</code></a></p>
+<h1 id="class-Alimento-label-alimento.rb">alimento.rb<span><a href="#class-Alimento-label-alimento.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<dl class="rdoc-list note-list"><dt>autor
+<dd>
+<p>Paula Expósito Estévez</p>
+</dd><dt>asignatura
+<dd>
+<p>Lenguajes y Paradigmas de Programación</p>
+</dd></dl>
+
+<h2 id="class-Alimento-label-Clase+Alimento">Clase <a href="Alimento.html"><code>Alimento</code></a><span><a href="#class-Alimento-label-Clase+Alimento">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Esta clase define los alimentos con los que trabajará el programa, contiene:</p>
+<ul><li>
+<p>El nombre del alimento</p>
+</li><li>
+<p>La cantidad de proteínas por cada 100 gramos</p>
+</li><li>
+<p>La cantidad de carbohidratos por cada 100 gramos</p>
+</li><li>
+<p>La cantidad de lipidos por cada 100 gramos</p>
+</li><li>
+<p>La cantidad de gases de efecto invernadero emitidos  por porción</p>
+</li><li>
+<p>La cantidad de terreno utilizado por metro cuadrado</p>
+</li></ul>
 
   </section>
 
@@ -136,7 +169,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -149,7 +182,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -162,7 +195,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -175,7 +208,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -188,7 +221,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -201,7 +234,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -214,7 +247,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métedos de acceso y modificación de las variables de instancia</p>
         
         </div>
       </div>
@@ -242,13 +275,13 @@
 
         <div class="method-description">
           
-          
+          <p>Invalidación del método initialize para instaanciar objetos de tipo <a href="Alimento.html"><code>Alimento</code></a> Recibe tres parámetros: el nombre del alimento, la información de esté y la cantidad</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 19</span>
+            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">alimento</span>, <span class="ruby-identifier">nombre</span>, <span class="ruby-identifier">cantidad</span>)
         <span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">nombre</span>
         <span class="ruby-ivar">@proteinas</span> = (<span class="ruby-identifier">alimento</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">cantidad</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)
@@ -289,13 +322,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que suma dos alimentos y devuelve otro que es el conjunto de los dos primeros</p>
           
           
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Alimento</span>
         <span class="ruby-identifier">nuevo_alimento</span> = [(<span class="ruby-identifier">proteinas</span><span class="ruby-operator">+</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">proteinas</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>), (<span class="ruby-identifier">carbohidratos</span><span class="ruby-operator">+</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">carbohidratos</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>), (<span class="ruby-identifier">lipidos</span><span class="ruby-operator">+</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">lipidos</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>), (<span class="ruby-identifier">gei</span><span class="ruby-operator">+</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">gei</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>), (<span class="ruby-identifier">terreno</span><span class="ruby-operator">+</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">terreno</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)]
@@ -326,20 +359,17 @@
 
         <div class="method-description">
           
-          
+          <p>Invalidación del método &lt;=&gt; del módulo comparable para poder comparar alimentos</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 11</span>
-        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">anOther</span>)
-                <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">Alimento</span>
-<span class="ruby-comment">#               temp1 = @proteinas + @carbohidratos + @lipidos + @gei + @terreno</span>
-<span class="ruby-comment">#               temp2 = anOther.proteinas + anOther.carbohidratos + anOther.lipidos + anOther.gei + anOther.terreno</span>
-<span class="ruby-comment">#               temp1 &lt;=&gt; temp2</span>
-                <span class="ruby-identifier">valor_energetico</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">valor_energetico</span>
-        <span class="ruby-keyword">end</span></pre>
+            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">anOther</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">Alimento</span>
+        <span class="ruby-identifier">valor_energetico</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">valor_energetico</span>
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -369,7 +399,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 38</span>
+            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-node">&quot;#{@cantidad} kg de #{@nombre}: #{@proteinas}, #{@carbohidratos}, #{@lipidos}, #{@gei}, #{@terreno}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -396,13 +426,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve las kcal (valor energético) de un alimento</p>
           
           
 
           
           <div class="method-source-code" id="valor_energetico-source">
-            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/tdd/alimento.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valor_energetico</span>
         (<span class="ruby-identifier">proteinas</span><span class="ruby-operator">*</span><span class="ruby-value">4.0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">carbohidratos</span><span class="ruby-operator">*</span><span class="ruby-value">4.0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">lipidos</span><span class="ruby-operator">*</span><span class="ruby-value">9.0</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)
 <span class="ruby-keyword">end</span></pre>

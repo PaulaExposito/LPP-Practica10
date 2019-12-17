@@ -96,6 +96,8 @@
     
 <p>Clase persona, almacena el nombre de una persona y su sexo Se utiliza para calcular el impacto ambiental diario de la dieta de una persona de entre 10-39 años</p>
 
+<p>Esta clase tiene dos variables de instancia: el nombre de una persona y su sexo</p>
+
   </section>
 
   
@@ -121,7 +123,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métdos para el acceso a las variables de instancia</p>
         
         </div>
       </div>
@@ -134,7 +136,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métdos para el acceso a las variables de instancia</p>
         
         </div>
       </div>
@@ -162,13 +164,13 @@
 
         <div class="method-description">
           
-          
+          <p>Invalizadación del método initialize para instanciar un objeto de tipo <a href="Persona.html"><code>Persona</code></a> Recibe el nombre y el sexo de la persona</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/tdd/persona.rb, line 8</span>
+            <pre><span class="ruby-comment"># File lib/tdd/persona.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">nombre</span>, <span class="ruby-identifier">sexo</span>)
         <span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">nombre</span>
         <span class="ruby-ivar">@sexo</span> = <span class="ruby-identifier">sexo</span>
@@ -204,13 +206,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el impacto ambiental anual de una persona si lleva la misma dieta durante todos los días del año Calcula el impacto ambiental diario y lo multiplica por el número de días de un año</p>
           
           
 
           
           <div class="method-source-code" id="impacto_ambiental_anual-source">
-            <pre><span class="ruby-comment"># File lib/tdd/persona.rb, line 35</span>
+            <pre><span class="ruby-comment"># File lib/tdd/persona.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">impacto_ambiental_anual</span> (<span class="ruby-identifier">dieta</span>)
         <span class="ruby-identifier">a</span> = <span class="ruby-identifier">impacto_ambiental_diario</span>(<span class="ruby-identifier">dieta</span>)
         <span class="ruby-keyword">return</span> [ (<span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>), (<span class="ruby-identifier">a</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span><span class="ruby-value">365</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>) ]
@@ -238,13 +240,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que devuelve el impacto ambiental diario de una persona en función de la dieta que sigue La dieta se puede representar con un Array o una lista <a href="List.html"><code>List</code></a> Se devuelve un Array con el total de gases de efecto invernadero y metros de terreno utilizados</p>
           
           
 
           
           <div class="method-source-code" id="impacto_ambiental_diario-source">
-            <pre><span class="ruby-comment"># File lib/tdd/persona.rb, line 14</span>
+            <pre><span class="ruby-comment"># File lib/tdd/persona.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">impacto_ambiental_diario</span> (<span class="ruby-identifier">dieta</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">dieta</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Array</span> 
                 <span class="ruby-identifier">alimento_conjunto</span> = <span class="ruby-identifier">dieta</span>[<span class="ruby-value">0</span>]

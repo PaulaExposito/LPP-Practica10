@@ -5,7 +5,8 @@ require "tdd/lista"
 require "tdd/plato"
 require "tdd/platoEE"
 
+# Módulo principal del proyecto
 module TDD
-  class Error < StandardError; end
+  #class Error < StandardError; end
   # Your code goes here...
 end

@@ -109,6 +109,10 @@
 
   <section class="description">
     
+<h1 id="class-PlatoEE-label-platoEE.rb">platoEE.rb<span><a href="#class-PlatoEE-label-platoEE.rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>La clase <a href="PlatoEE.html"><code>PlatoEE</code></a> hereda de la clase madre <a href="Plato.html"><code>Plato</code></a> Esta clase incluye la información sobre la eficiencia energética de un plato, es decir, los gases de efecto invernadero y el uso del terreno.</p>
+
   </section>
 
   
@@ -134,7 +138,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos que acceden a las variables de instancia de la clase y las modifica</p>
         
         </div>
       </div>
@@ -147,7 +151,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos que acceden a las variables de instancia de la clase y las modifica</p>
         
         </div>
       </div>
@@ -175,7 +179,7 @@
 
         <div class="method-description">
           
-          
+          <p>Método que invalida el método initialize para poder instanciar objetos de tipo <a href="PlatoEE.html"><code>PlatoEE</code></a> Recibe una lista de alimentos y llama al contructor de su clase madre Rellena las variables de instancia con el conjunto de alimentos de la lista Las variables de instancia son los gases de efecto inverdero de un plato y el uso del terreno</p>
           
           
             <div class="method-calls-super">
@@ -186,7 +190,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 23</span>
+            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">alimentos</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;no es una lista de alimentos&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">alimentos</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">List</span>
         <span class="ruby-keyword">super</span>(<span class="ruby-identifier">alimentos</span>)
@@ -236,13 +240,13 @@
 
         <div class="method-description">
           
-          
+          <p>Invalidación del método &lt;=&gt; del módulo Comparable para poder comparar dos <a href="PlatoEE.html"><code>PlatoEE</code></a></p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 6</span>
+            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">anOther</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;asrgumento no es de tipo platoEE&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">PlatoEE</span>
         <span class="ruby-keyword">self</span>.<span class="ruby-identifier">huella_nutricional</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">anOther</span>.<span class="ruby-identifier">huella_nutricional</span>
@@ -270,13 +274,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que calcula la huella nutricional de un plato Devuelve la media entre el índice de la huella de carbono y el índice de energía</p>
           
           
 
           
           <div class="method-source-code" id="huella_nutricional-source">
-            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 11</span>
+            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">huella_nutricional</span>
         <span class="ruby-identifier">media</span> = ((<span class="ruby-identifier">indice_energia</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">indice_huella_carbono</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -303,13 +307,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que calcula la huella de carbono de un plato Devuelve un valor entre 1 y 3</p>
           
           
 
           
           <div class="method-source-code" id="indice_huella_carbono-source">
-            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 15</span>
+            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indice_huella_carbono</span>
         <span class="ruby-identifier">huella_carbono</span> = <span class="ruby-ivar">@plato_gei</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>
         <span class="ruby-identifier">indice_hc</span> = <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">huella_carbono</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">800</span>
@@ -340,7 +344,7 @@
 
         <div class="method-description">
           
-          
+          <p>Método que invalida el método <a href="PlatoEE.html#method-i-to_s"><code>to_s</code></a> para formatear la salida de los datos de un objeto <a href="PlatoEE.html"><code>PlatoEE</code></a></p>
           
           
             <div class="method-calls-super">
@@ -351,7 +355,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/tdd/platoEE.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span> 
         <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;{&quot;</span>
         <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">super</span>.<span class="ruby-identifier">to_s</span>

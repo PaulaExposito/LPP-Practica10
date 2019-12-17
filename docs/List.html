@@ -113,6 +113,19 @@
 
   <section class="description">
     
+<h2 id="class-List-label-Clase+Lista">Clase Lista<span><a href="#class-List-label-Clase+Lista">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>La clase lista contiene nodos anidados, en cada nodo hay un dato y dos referencias a otros nodos</p>
+
+<p>Elementos de la clase <a href="List.html"><code>List</code></a></p>
+<ul><li>
+<p>head -&gt; es la referencia al siguiente elemento</p>
+</li><li>
+<p>tail -&gt; referencia al elemento anterior</p>
+</li><li>
+<p>tam -&gt; número de nodos que hay en una lista</p>
+</li></ul>
+
   </section>
 
   
@@ -138,7 +151,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y modificación de los elementos de una lista</p>
         
         </div>
       </div>
@@ -151,7 +164,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y modificación de los elementos de una lista</p>
         
         </div>
       </div>
@@ -164,7 +177,7 @@
 
         <div class="method-description">
         
-        
+        <p>Métodos para el acceso y modificación de los elementos de una lista</p>
         
         </div>
       </div>
@@ -192,13 +205,13 @@
 
         <div class="method-description">
           
-          
+          <p>Invalidación del método initialize para instanciar un objeto de tipo <a href="List.html"><code>List</code></a> Recibe un dato que se meterá en un Node y posteriormente se inyecta en la lista</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 9</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">dato</span>)
         <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dato</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-constant">NilClass</span>)) 
                 <span class="ruby-ivar">@head</span>, <span class="ruby-ivar">@tail</span>, <span class="ruby-ivar">@tam</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>
@@ -240,13 +253,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que define cómo se enumera una lista Hace uso del módulo Enumerable</p>
           
           
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@tail</span>
         <span class="ruby-keyword">while</span> <span class="ruby-identifier">aux</span>.<span class="ruby-identifier">next</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
@@ -278,13 +291,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que elimina un elemento por la cabeza de la lista</p>
           
           
 
           
           <div class="method-source-code" id="extract_head-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 45</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_head</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">tam</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
                 <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@head</span>
@@ -319,13 +332,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que extrae un elemento por la cola de lista</p>
           
           
 
           
           <div class="method-source-code" id="extract_tail-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 57</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_tail</span>
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">tam</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
                 <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@tail</span>
@@ -360,13 +373,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que inserta un nodo por la cabeza de la lista</p>
           
           
 
           
           <div class="method-source-code" id="insert_head-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 20</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head</span> (<span class="ruby-identifier">dato</span>)
         <span class="ruby-identifier">node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dato</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">tam</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
@@ -402,13 +415,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que inserta un nodo por la cola de la lista</p>
           
           
 
           
           <div class="method-source-code" id="insert_tail-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_tail</span> (<span class="ruby-identifier">dato</span>)
         <span class="ruby-identifier">node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dato</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">tam</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
@@ -443,13 +456,13 @@
 
         <div class="method-description">
           
-          
+          <p>Método que invalida el método <a href="List.html#method-i-to_s"><code>to_s</code></a> para mostrar los datos de una lista</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 69</span>
+            <pre><span class="ruby-comment"># File lib/tdd/lista.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
         <span class="ruby-identifier">aux</span> = <span class="ruby-ivar">@tail</span>
         <span class="ruby-identifier">c</span> = <span class="ruby-string">&quot;(&quot;</span>
