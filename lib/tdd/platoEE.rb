@@ -11,7 +11,7 @@ class PlatoEE < Plato
 
 	# Invalidación del método <=> del módulo Comparable para poder comparar dos PlatoEE
 	def <=> (anOther)
-		raise TypeError, "asrgumento no es de tipo platoEE" unless anOther.is_a?PlatoEE
+		raise TypeError, "argumento no es de tipo platoEE" unless anOther.is_a?PlatoEE
 		self.huella_nutricional <=> anOther.huella_nutricional
 	end
 
@@ -36,37 +36,45 @@ class PlatoEE < Plato
 	# Rellena las variables de instancia con el conjunto de alimentos de la lista
 	# Las variables de instancia son los gases de efecto inverdero de un plato y el uso del terreno 
 	# Recibe una lista de alimentos
-	def initialize (alimentos)
+	def initialize (alimentos, &block)
 		# Initialize para una lista
 #		raise TypeError, "no es una lista de alimentos" unless alimentos.is_a?List
-=begin		super(alimentos)
+		if alimentos.is_a?List
+			super(alimentos)
 		
-		@plato_gei = @plato_terreno = 0
-		aux = alimentos.tail
-		while aux.next != nil do
-			raise TypeError, "no es un alimento" unless aux.value.is_a?Alimento
+			@plato_gei = @plato_terreno = 0
+			aux = alimentos.tail
+			while aux.next != nil do
+				raise TypeError, "no es un alimento" unless aux.value.is_a?Alimento
+				@plato_gei += aux.value.gei
+			        @plato_terreno += aux.value.terreno
+				aux = aux.next
+			end
+
 			@plato_gei += aux.value.gei
-		        @plato_terreno += aux.value.terreno
-			aux = aux.next
+			@plato_terreno += aux.value.terreno
+			@plato_gei = @plato_gei.round(2)
+			@plato_terreno = @plato_terreno.round(2)
+		else
+			if block_given? 
+				@nombre = alimentos
+				@descripcion = ""
+				@alimentos = []
+				if block.arity == 1
+					yield self
+				else
+					instance_eval(&block)
+				end
+			end
 		end
-
-		@plato_gei += aux.value.gei
-		@plato_terreno += aux.value.terreno
-		@plato_gei = @plato_gei.round(2)
-=end		@plato_terreno = @plato_terreno.round(2)
-
-		@nombre = alimentos
-		@descripcion = ""
-		@alimentos = []
-
-		yield self
-
 	end
 
+	# Método que guarda el nombre de un plato
 	def descripcion (nombre)
 		@nombre = nombre
 	end
 
+	# Método que almacena los datos de un elemento del plato
 	def alimento (comida = {})
 		kilos = comida[:gramos] / 1000.0
 		aux = Alimento.new(comida[:valores_nutricionales], "", kilos)
@@ -76,27 +84,27 @@ class PlatoEE < Plato
 
 	# Método que invalida el método to_s para formatear la salida de los datos de un objeto PlatoEE
 	def to_s 
-=begin		s = "{"
-		s << super.to_s
-		s << "(#{@plato_gei} kgCO2eq, #{@plato_terreno} m2año)}"
-=end		return s
-
-		output = nombre.upcase
-		output << "\n\n"
-		@alimentos.each do |i|
-			output << "#{i[1]} gramos de #{i[0]} \n"
+		if !@alimentos.is_a?Array
+			s = "{"
+			s << super.to_s
+			s << "(#{@plato_gei} kgCO2eq, #{@plato_terreno} m2año)}"
+			return s
+		else
+			output = nombre.upcase
+			output << "\n\n"
+			@alimentos.each do |i|
+				output << "#{i[1]} gramos de #{i[0]} \n"
+			end
+			return output
 		end
-		return output
 	end
 
+	# Método que devuelve los valores nutricionales, ambientales y energéticos de un plato
 	def valores_n_a
 		v_nutricional = [0,0,0]
 		v_ambiental = [0,0]
 		v_energetico = 0
 		@alimentos.each do |i|
-			p "v_n: #{i[2].valor_nutricional}"
-			p "p_a: #{i[2].valor_ambiental}"
-			p "ve: #{i[2].valor_energetico}"
 			v_nutricional[0] += i[2].valor_nutricional[0]  # proteínas	
 			v_nutricional[1] += i[2].valor_nutricional[1]  # carbohidratos	 
 			v_nutricional[2] += i[2].valor_nutricional[2]  # lipidos

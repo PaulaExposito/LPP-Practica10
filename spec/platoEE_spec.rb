@@ -8,11 +8,11 @@ RSpec.describe PlatoEE do
 	before :each do
 		@lista_alimentos = List.new(Alimento.new(TDD::Cafe, "cafe", 1))
 		@lista_alimentos.insert_head(Alimento.new(TDD::Leche, "leche", 1))
-#		@plato1 = PlatoEE.new(@lista_alimentos)
+		@plato1 = PlatoEE.new(@lista_alimentos)
 	end
 
 	context "Probando la clase Plaro Eficiencia Energética" do
-=begin		it "Se crea un objeto de tipo PlatoEE" do
+		it "Se crea un objeto de tipo PlatoEE" do
 			a = PlatoEE.new(@lista_alimentos)
 		end
 
@@ -26,11 +26,11 @@ RSpec.describe PlatoEE do
 
 		it "Método to_s utilizando clase madre" do
 			expect("{(cafe leche: 65.2 kcal)(3.6 kgCO2eq, 9.2 m2año)}").to eq(@plato1.to_s)
-=end		end
+		end
 	end
 
 	context "Probando clase, tipo y pertenencia de PlatoEE" do
-=begin		it "Comprobar la clase de un objeto" do
+		it "Comprobar la clase de un objeto" do
 			expect(PlatoEE).to eq(@plato1.class)
 		end
 
@@ -43,7 +43,7 @@ RSpec.describe PlatoEE do
 			expect(true).to eq(@plato1.is_a?PlatoEE)
 			expect(true).to eq(@plato1.is_a?Plato)
 			expect(true).to eq(@plato1.is_a?Object)
-=end		end
+		end
 	end
 
 	context "Probando PlatoEE con 5 dietas" do
@@ -141,7 +141,7 @@ RSpec.describe PlatoEE do
 	end
 
 	context "Práctica 9" do
-=begin		before :each do
+		before :each do
 			@p1 = List.new(Alimento.new(TDD::Camarones, "camarones", 1))
 			@p1.insert_head(Alimento.new(TDD::Cerveza, "cerveza", 1))
 			@primero = PlatoEE.new(@p1)
@@ -168,7 +168,7 @@ RSpec.describe PlatoEE do
 		it "Prueba para incrementar el precio del menú" do
 			precio_nuevo = @precio.collect { |p| p * @menu.max.huella_nutricional }
 			expect(precio_nuevo).to eq([25.40, 14.50, 1.80])
-=end		end		
+		end		
 		
 	end
 
@@ -209,6 +209,19 @@ RSpec.describe PlatoEE do
 			p a.to_s
 
 		end
-	end	
 
+		it "Prueba con bloque sin ariedad" do
+			@hamburguesa3 = PlatoEE.new("Hamburguesa") do
+				descripcion	"hamburguesa especial de la casa"
+				alimento	:descripcion => "carne de vaca",
+						:gramos => 100,
+						:valores_nutricionales => TDD::Carne_vaca
+				alimento	:descripcion => "huevo",
+						:gramos => 20,
+						:valores_nutricionales => TDD::Huevos
+			end
+		end
+	end	
 end
+
+
