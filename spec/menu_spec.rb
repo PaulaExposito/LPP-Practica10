@@ -35,7 +35,7 @@ RSpec.describe Menu do
 						:valores_nutricionales => TDD::Chocolate
 			end
 
-=begin			@menu = Menu.new("Combinado nº1") do
+			@menu = Menu.new("Combinado nº1") do
 				descripcion "hamburguesa, papas, batido"
 				componente :descripcion => "Hamburguesa especial de la casa",
 					:precio => 4.25,
@@ -47,7 +47,7 @@ RSpec.describe Menu do
 					:precio => 1.50,
 					:plato => @batido
 				precio 	7.50
-=end			end
+			end
 		end
 
 		it "Se crea la estructuras de Menu con los dos métodos" do
@@ -64,7 +64,10 @@ RSpec.describe Menu do
 					:plato => @batido
 				r.precio 	7.50
 			end
-			p @hamburguesa.to_s
+		end
+
+		it "Prueba para la salida formateada del menú" do
+			expect(@hamburguesa.to_s).to eq("COMBINADO Nº1\n1) Hamburguesa especial de la casa    4.25€\n2)Papas pequeñas    1.75€\n3)Batido de chocolate    1.50@\n\n")
 		end
 	end
 end
