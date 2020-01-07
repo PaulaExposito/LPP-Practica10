@@ -68,7 +68,8 @@ class PlatoEE < Plato
 	end
 
 	def alimento (comida = {})
-		@alimentos << [ "#{comida[:descripcion]}", comida[:gramos] ]
+		aux = Alimento.new(comida[:valores_nutricionales], "", comida[:gramos])
+		@alimentos << [ "#{comida[:descripcion]}", comida[:gramos], aux ]
 	end
 
 
@@ -84,7 +85,23 @@ class PlatoEE < Plato
 		@alimentos.each do |i|
 			output << "#{i[1]} gramos de #{i[0]} \n"
 		end
-		p output
 		return output
-	end	
+	end
+
+	def valores_n_a
+		v_nutricional = [0,0,0]
+		v_ambiental = [0,0]
+		v_energetico = 0
+		@alimentos.each do |i|
+			v_nutricional[0] += i[2].valor_nutricional[0]  # proteínas	
+			v_nutricional[1] += i[2].valor_nutricional[1]  # carbohidratos	 
+			v_nutricional[2] += i[2].valor_nutricional[2]  # lipidos
+
+			v_ambiental[0] += i[2].valor_ambiental[0]      # gei	
+			v_ambiental[1] += i[2].valor_ambiental[1]      # terreno
+
+			v_energetico += i[2].valor_energetico
+		end
+		return 	[v_nutricional, v_ambiental, v_energetico]
+	end
 end

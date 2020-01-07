@@ -55,4 +55,11 @@ class Alimento
 	def valor_energetico
 		(proteinas*4.0 + carbohidratos*4.0 + lipidos*9.0).round(2)
 	end
+
+	def valor_nutricional
+		[proteinas, carbohidratos, lipidos]
+
+	def valor_ambiental
+		[gei, terreno]
+	end
 end 

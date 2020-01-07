@@ -179,9 +179,11 @@ RSpec.describe PlatoEE do
 			@hamburguesa = PlatoEE.new("Hamburguesa") do |r|
 				r.descripcion	"hamburguesa especial de la casa"
 				r.alimento	:descripcion => "carne de vaca",
-						:gramos => 100
+						:gramos => 100,
+						:valores_nutricionales => TDD::Carne_vaca
 				r.alimento	:descripcion => "huevo",
-						:gramos => 20
+						:gramos => 20,
+						:valores_nutricionales => TDD::Huevos
 			end
 		end
 
@@ -189,9 +191,11 @@ RSpec.describe PlatoEE do
 			plato = PlatoEE.new("Hamburguesa") do |r|
 				r.descripcion	"hamburguesa especial de la casa"
 				r.alimento	:descripcion => "carne de vaca",
-						:gramos => 100
+						:gramos => 100,
+						:valores_nutricionales => TDD::Carne_vaca
 				r.alimento	:descripcion => "huevo",
-						:gramos => 20
+						:gramos => 20,
+						:valores_nutricionales => TDD::Huevos
 			end
 		end
 
