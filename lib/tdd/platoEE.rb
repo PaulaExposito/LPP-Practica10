@@ -5,7 +5,7 @@
 #
 class PlatoEE < Plato
 	# Métodos que acceden a las variables de instancia de la clase y las modifica
-	attr_accessor :plato_gei, :plato_terreno
+	attr_accessor :plato_gei, :plato_terreno, :nombre
 
 	include Comparable
 
@@ -35,9 +35,11 @@ class PlatoEE < Plato
 	# Recibe una lista de alimentos y llama al contructor de su clase madre
 	# Rellena las variables de instancia con el conjunto de alimentos de la lista
 	# Las variables de instancia son los gases de efecto inverdero de un plato y el uso del terreno 
+	# Recibe una lista de alimentos
 	def initialize (alimentos)
-		raise TypeError, "no es una lista de alimentos" unless alimentos.is_a?List
-		super(alimentos)
+		# Initialize para una lista
+#		raise TypeError, "no es una lista de alimentos" unless alimentos.is_a?List
+=begin		super(alimentos)
 		
 		@plato_gei = @plato_terreno = 0
 		aux = alimentos.tail
@@ -51,14 +53,38 @@ class PlatoEE < Plato
 		@plato_gei += aux.value.gei
 		@plato_terreno += aux.value.terreno
 		@plato_gei = @plato_gei.round(2)
-		@plato_terreno = @plato_terreno.round(2)
+=end		@plato_terreno = @plato_terreno.round(2)
+
+		@nombre = alimentos
+		@descripcion = ""
+		@alimentos = []
+
+		yield self
+
 	end
+
+	def descripcion (nombre)
+		p "holi"
+		@nombre = nombre
+	end
+
+	def alimento (comida = {}, cantidad ={})
+		@alimentos << [ comida[:nombre], cantidad[:gramos] ]
+	end
+
 
 	# Método que invalida el método to_s para formatear la salida de los datos de un objeto PlatoEE
 	def to_s 
-		s = "{"
+=begin		s = "{"
 		s << super.to_s
 		s << "(#{@plato_gei} kgCO2eq, #{@plato_terreno} m2año)}"
-		return s
+=end		return s
+
+		output = nombre.upcase
+		output << "\n\n"
+		@alimentos.each do |i|
+			output << "#{i[1]} gramos de #{i[0]} \n"
+		end
+		return output
 	end	
 end
