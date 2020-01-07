@@ -7,7 +7,7 @@ require './lib/tdd/menu.rb'
 
 RSpec.describe Menu do
 	context "# Pruebas para la clase Menú" do
-		before :all do
+		before :each do
 			@hamburguesa = PlatoEE.new("Hamburguesa") do 
 				descripcion	"hamburguesa especial de la casa"
 				alimento 	:descripcion => "carne de vaca",
@@ -35,18 +35,18 @@ RSpec.describe Menu do
 						:valores_nutricionales => TDD::Chocolate
 			end
 
-			@menu = Menu.new("Combinado nº1") do
-				descripcion "hamburguesa, papas, batido"
-				componente :descripcion => "Hamburguesa especial de la casa",
+			@menu = Menu.new("Combinado nº1") do |r|
+				r.descripcion "hamburguesa, papas, batido"
+				r.componente :descripcion => "Hamburguesa especial de la casa",
 					:precio => 4.25,
 					:plato => @hamburguesa
-				componente :descripcion => "Papas pequeñas",
+				r.componente :descripcion => "Papas pequeñas",
 					:precio => 1.75,
 					:plato => @papitas
-				componente :descripicion => "Batido de chocolate",
+				r.componente :descripcion => "Batido de chocolate",
 					:precio => 1.50,
 					:plato => @batido
-				precio 	7.50
+				r.precio 	7.50
 			end
 		end
 
@@ -59,7 +59,7 @@ RSpec.describe Menu do
 				r.componente :descripcion => "Papas pequeñas",
 					:precio => 1.75,
 					:plato => @papitas
-				r.componente :descripicion => "Batido de chocolate",
+				r.componente :descripcion => "Batido de chocolate",
 					:precio => 1.50,
 					:plato => @batido
 				r.precio 	7.50
@@ -67,7 +67,7 @@ RSpec.describe Menu do
 		end
 
 		it "Prueba para la salida formateada del menú" do
-			expect(@hamburguesa.to_s).to eq("COMBINADO Nº1\n1) Hamburguesa especial de la casa    4.25€\n2)Papas pequeñas    1.75€\n3)Batido de chocolate    1.50@\n\n")
+			expect(@menu.to_s).to eq("COMBINADO Nº1\n1)Hamburguesa especial de la casa    4.25€\n2)Papas pequeñas    1.75€\n3)Batido de chocolate    1.5€\n\nPrecio total: 7.5\n\nINFORMACIÓN NUTRICIONAL:\n   Proteínas: 3.38 gramos\n   Carbohidratos: 2.42 gramos\n   Lípidos: 3.29 gramos\n\nINFORMACIÓN AMBIENTAL:\n   Gases de efecto invernadero: 5.4\n   Uso de terreno: 17.52 m2\n")  
 		end
 	end
 end
