@@ -9,5 +9,5 @@ require "tdd/platoEE"
 module TDD
   #class Error < StandardError; end
   # Your code goes here...
-  # 
+  # ... 
 end
