@@ -58,6 +58,7 @@ class Alimento
 
 	def valor_nutricional
 		[proteinas, carbohidratos, lipidos]
+	end
 
 	def valor_ambiental
 		[gei, terreno]

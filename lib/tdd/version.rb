@@ -31,7 +31,7 @@ module TDD
 	# Constante que contiene la información del pollo
 	Pollo = [20.6, 0.0, 5.6, 5.7, 7.1]
 	# Constante que contiene la información de un kilo de huevos
-	Huevos = [13, 1.1, 11.0, 4.2, 5.7]    
+	Huevos = [13.0, 1.1, 11.0, 4.2, 5.7]    
 	# Constante que contiene la información del café
 	Cafe = [0.1,0.0,0.4,0.4,0.3]
 	# Constante que contiene la información de la cerveza

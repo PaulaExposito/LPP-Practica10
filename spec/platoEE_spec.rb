@@ -202,6 +202,13 @@ RSpec.describe PlatoEE do
 		it "Prueba del método to_s utilizando bloques" do
 			expect(@hamburguesa.to_s).to eq("HAMBURGUESA ESPECIAL DE LA CASA\n\n100 gramos de carne de vaca \n20 gramos de huevo \n")
 		end
+
+		it "Prueba para calcular los valores ambientales y nutricionales con bloques" do
+			expect(@hamburguesa.valores_n_a).to eq([[2.37,0.02,0.53],[5.08,16.51],14.33])
+			a = Alimento.new(TDD::Carne_vaca, "carne", 0.1)
+			p a.to_s
+
+		end
 	end	
 
 end
