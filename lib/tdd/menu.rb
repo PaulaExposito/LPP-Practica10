@@ -4,12 +4,16 @@
 #
 class Menu
 
-=begin	def initialize (name, &block)
+	# Métodos para leer y modificar los datos de las variables de instancia
+	attr_accessor :name
+
+	# Método para inicializar las variables de instancia de la clase
+	def initialize (name, &block)
 		if block_given?
 			@name = name
-			@descripcion_t = ""
+			@descripcion = ""
 			@componentes = []
-			@precio_t
+			@precio
 
 			if block.arity == 1
 				yield self
@@ -17,6 +21,21 @@ class Menu
 				instance_eval(&block)
 			end
 		end
-=end	end
+	end
+
+	# Métpdp para guardar la descripción de un menú
+	def descripcion (desc)
+		@descripcion = desc
+	end
+
+	# Método que almacena los platos del menú
+	def componente (plato = {})
+		@componentes << [ "#{plato[:descripcion]}", plato[:precio], plato[:plato] ] 	
+	end
+
+	# Método que almacena el precio total del menú
+	def precio (p)
+		@precio = p
+	end
 end
 
