@@ -174,6 +174,17 @@ RSpec.describe PlatoEE do
 
 
 	context "# Práctica 10: diseñar e implementar un DSL" do
+
+		before :each do
+			@hamburguesa = PlatoEE.new("Hamburguesa") do |r|
+				r.descripcion	"hamburguesa especial de la casa"
+				r.alimento	:descripcion => "carne de vaca",
+						:gramos => 100
+				r.alimento	:descripcion => "huevo",
+						:gramos => 20
+			end
+		end
+
 		it "Se recibe un bloque" do
 			plato = PlatoEE.new("Hamburguesa") do |r|
 				r.descripcion	"hamburguesa especial de la casa"
@@ -183,6 +194,9 @@ RSpec.describe PlatoEE do
 						:gramos => 20
 			end
 		end
+
+		it "Prueba del método to_s utilizando bloques" do
+			expect(@hamburguesa.to_s).to eq("HAMBURGUESA ESPECIAL DE LA CASA\n\n100 gramos de carne de vaca \n"
 	end	
 
 end
