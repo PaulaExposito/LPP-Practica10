@@ -196,7 +196,8 @@ RSpec.describe PlatoEE do
 		end
 
 		it "Prueba del método to_s utilizando bloques" do
-			expect(@hamburguesa.to_s).to eq("HAMBURGUESA ESPECIAL DE LA CASA\n\n100 gramos de carne de vaca \n"
+			expect(@hamburguesa.to_s).to eq("HAMBURGUESA ESPECIAL DE LA CASA\n\n100 gramos de carne de vaca \n20 gramos de huevo \n")
+		end
 	end	
 
 end

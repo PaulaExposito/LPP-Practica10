@@ -64,12 +64,11 @@ class PlatoEE < Plato
 	end
 
 	def descripcion (nombre)
-		p "holi"
 		@nombre = nombre
 	end
 
-	def alimento (comida = {}, cantidad ={})
-		@alimentos << [ comida[:nombre], cantidad[:gramos] ]
+	def alimento (comida = {})
+		@alimentos << [ "#{comida[:descripcion]}", comida[:gramos] ]
 	end
 
 
@@ -85,6 +84,7 @@ class PlatoEE < Plato
 		@alimentos.each do |i|
 			output << "#{i[1]} gramos de #{i[0]} \n"
 		end
+		p output
 		return output
 	end	
 end
