@@ -51,18 +51,18 @@ RSpec.describe Menu do
 		end
 
 		it "Se crea la estructuras de Menu con los dos métodos" do
-			menu2 = Menu.new("Combinado nº1") do |r|
-				r.descripcion "hamburguesa, papas, batido"
-				r.componente :descripcion => "Hamburguesa especial de la casa",
+			menu2 = Menu.new("Combinado nº1") do
+				descripcion "hamburguesa, papas, batido"
+				componente :descripcion => "Hamburguesa especial de la casa",
 					:precio => 4.25,
 					:plato => @hamburguesa
-				r.componente :descripcion => "Papas pequeñas",
+				componente :descripcion => "Papas pequeñas",
 					:precio => 1.75,
 					:plato => @papitas
-				r.componente :descripcion => "Batido de chocolate",
+				componente :descripcion => "Batido de chocolate",
 					:precio => 1.50,
 					:plato => @batido
-				r.precio 	7.50
+				precio 	7.50
 			end
 		end
 
